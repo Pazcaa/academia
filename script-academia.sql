@@ -24,31 +24,6 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ `academia` /*!40100 DEFAULT CHARACTER S
 USE `academia`;
 
 --
--- Table structure for table `alumnos`
---
-
-DROP TABLE IF EXISTS `alumnos`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `alumnos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(50) NOT NULL,
-  `apellidos` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `alumnos`
---
-
-LOCK TABLES `alumnos` WRITE;
-/*!40000 ALTER TABLE `alumnos` DISABLE KEYS */;
-INSERT INTO `alumnos` VALUES (1,'Elier','Otero'),(2,'Beatriz','Martinez'),(3,'Asier','Mintegui'),(4,'Lander','Bilbao');
-/*!40000 ALTER TABLE `alumnos` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `alumnosCurso`
 --
 
@@ -60,9 +35,9 @@ CREATE TABLE `alumnosCurso` (
   `idAlumno` int(11) NOT NULL,
   `idCurso` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_alumnos` (`idAlumno`),
   KEY `FK_cursos` (`idCurso`),
-  CONSTRAINT `FK_alumnos` FOREIGN KEY (`idAlumno`) REFERENCES `alumnos` (`id`),
+  KEY `FK_alumnos` (`idAlumno`),
+  CONSTRAINT `FK_alumnos` FOREIGN KEY (`idAlumno`) REFERENCES `usuarios` (`id`),
   CONSTRAINT `FK_cursos` FOREIGN KEY (`idCurso`) REFERENCES `cursos` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -73,7 +48,7 @@ CREATE TABLE `alumnosCurso` (
 
 LOCK TABLES `alumnosCurso` WRITE;
 /*!40000 ALTER TABLE `alumnosCurso` DISABLE KEYS */;
-INSERT INTO `alumnosCurso` VALUES (1,1,1),(2,1,2),(3,2,1),(4,2,3),(5,3,2),(6,3,3),(7,4,1),(8,4,3);
+INSERT INTO `alumnosCurso` VALUES (1,4,1),(2,4,2),(3,5,1),(4,5,3),(5,6,2),(6,6,3),(7,7,1),(8,7,3);
 /*!40000 ALTER TABLE `alumnosCurso` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -90,7 +65,9 @@ CREATE TABLE `cursos` (
   `identificador` varchar(10) NOT NULL,
   `horas` int(11) NOT NULL DEFAULT '0',
   `idProfesor` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `FK_profesores` (`idProfesor`),
+  CONSTRAINT `FK_profesores` FOREIGN KEY (`idProfesor`) REFERENCES `usuarios` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -105,28 +82,31 @@ INSERT INTO `cursos` VALUES (1,'Microsoft Office 2016','I001',50,1),(2,'Experto 
 UNLOCK TABLES;
 
 --
--- Table structure for table `profesores`
+-- Table structure for table `usuarios`
 --
 
-DROP TABLE IF EXISTS `profesores`;
+DROP TABLE IF EXISTS `usuarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `profesores` (
+CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) NOT NULL,
   `apellidos` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `rol` int(11) NOT NULL DEFAULT '1' COMMENT '1: alumno, 2:profesor',
+  `password` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `usuarios_UN` (`nombre`,`apellidos`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `profesores`
+-- Dumping data for table `usuarios`
 --
 
-LOCK TABLES `profesores` WRITE;
-/*!40000 ALTER TABLE `profesores` DISABLE KEYS */;
-INSERT INTO `profesores` VALUES (1,'Alain','Moles'),(2,'Ander','Uraga'),(3,'Pepito','Piscinas');
-/*!40000 ALTER TABLE `profesores` ENABLE KEYS */;
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (1,'Alain','Moles',2,'e10adc3949ba59abbe56e057f20f883e'),(2,'Ander','Uraga',2,'e10adc3949ba59abbe56e057f20f883e'),(3,'Pepito','Piscinas',2,'e10adc3949ba59abbe56e057f20f883e'),(4,'Elier','Otero',1,'e10adc3949ba59abbe56e057f20f883e'),(5,'Beatriz','Martinez',1,'e10adc3949ba59abbe56e057f20f883e'),(6,'Asier','Mintegui',1,'e10adc3949ba59abbe56e057f20f883e'),(7,'Lander','Bilbao',1,'e10adc3949ba59abbe56e057f20f883e');
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -138,4 +118,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-09-14 22:22:20
+-- Dump completed on 2020-09-15 22:23:38
