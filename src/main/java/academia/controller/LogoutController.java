@@ -6,28 +6,28 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class InicioController
+ * Servlet implementation class LogoutController
  */
-@WebServlet("/cursos")
-public class InicioController extends HttpServlet {
+@WebServlet("/logout")
+public class LogoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public InicioController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		request.setAttribute("mensaje", "Su sesion ha terminado, hasta pronto!");
+		
+		HttpSession session = request.getSession();
+		session.invalidate();
+		session = null;
+		
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 	/**

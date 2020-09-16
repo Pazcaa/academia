@@ -16,7 +16,7 @@ import academia.modelo.pojo.Curso;
 /**
  * Servlet implementation class CursoController
  */
-@WebServlet("/inicio")
+@WebServlet("/cursos")
 public class CursoController extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;

@@ -51,7 +51,7 @@ public class LoginController extends HttpServlet {
 		if (usuario != null) {
 			
 			session.setMaxInactiveInterval(60 * 5);//tras 5 min sin peticiones se desconecta automaticamente
-			session.setAttribute("Usuario_login", usuario);
+			session.setAttribute("usuario_login", usuario);
 			
 			request.setAttribute("mensaje", usuario.getNombre() + " " + usuario.getApellidos() + " se ha conectado con exito");
 			//request.getRequestDispatcher("inicio").forward(request, response);
@@ -61,11 +61,13 @@ public class LoginController extends HttpServlet {
 				request.getRequestDispatcher("alumno.jsp").forward(request, response);
 				
 			}else {
-				request.getRequestDispatcher("profesor.jsp").forward(request, response);
+				request.getRequestDispatcher("profesor").forward(request, response);
 			}
 		
 			
 		}else {
+			request.setAttribute("nombre", nombre);
+			request.setAttribute("apellidos", apellido);
 			request.setAttribute("mensaje", "Sus datos son incorrectos, vuelva a intentarlo");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 			

@@ -30,7 +30,7 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 	// executeQUery => ResultSet
 	private final static String SQL_EXISTE  = " SELECT u.id , u.nombre, u.apellidos, u.rol, u.password\n" + 
 											" FROM usuarios u " +
-											" WHERE nombre = '?' AND apellidos = '?' AND password = MD5('?');";
+											" WHERE nombre = ? AND apellidos = ? AND password = MD5(?);";
 	
 
 	@Override
@@ -40,18 +40,19 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 		try (Connection con = ConnectionManager.getConnection();
 			PreparedStatement pst = con.prepareStatement(SQL_EXISTE);) {
 			
+			
 			pst.setString(1, nombre);
 			pst.setString(2, apellido);
 			pst.setString(3, password);
 			
 			try (ResultSet rs = pst.executeQuery();){
 				if (rs.next()) {
-					Usuario u = new Usuario();
-					u.setId(rs.getInt("u.id"));
-					u.setNombre(rs.getString("u.nombre"));
-					u.setApellidos(rs.getString("u.apellidos"));
-					u.setRol(rs.getInt("u.rol"));
-					u.setPassword(rs.getString("u.password"));
+					usuario = new Usuario();
+					usuario.setId(rs.getInt("u.id"));
+					usuario.setNombre(rs.getString("u.nombre"));
+					usuario.setApellidos(rs.getString("u.apellidos"));
+					usuario.setRol(rs.getInt("u.rol"));
+					usuario.setPassword(rs.getString("u.password"));
 				}
 			} 
 			
