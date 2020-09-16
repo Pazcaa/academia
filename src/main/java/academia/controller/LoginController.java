@@ -45,6 +45,9 @@ public class LoginController extends HttpServlet {
 		//recupero el usuario
 		Usuario usuario = dao.existe(nombre, apellido, password);
 		
+		
+		
+		
 		if (usuario != null) {
 			
 			session.setMaxInactiveInterval(60 * 5);//tras 5 min sin peticiones se desconecta automaticamente
