@@ -15,13 +15,13 @@ import academia.modelo.pojo.Curso;
 import academia.modelo.pojo.Usuario;
 
 /**
- * Servlet implementation class ProfesorController
+ * Servlet implementation class AlumnoController
  */
-@WebServlet("/panel-profesor")
-public class ProfesorController extends HttpServlet {
+@WebServlet("/panel-alumno")
+public class AlumnoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static CursoDAOImpl daoCurso = CursoDAOImpl.getInstance();
-
+  
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -30,10 +30,16 @@ public class ProfesorController extends HttpServlet {
 		HttpSession session = request.getSession();
 		Usuario usuario = (Usuario)session.getAttribute("usuario_login");
 		
-		ArrayList<Curso> cursos = daoCurso.cursosByProfesor(usuario.getId());
+		ArrayList<Curso> cursos = daoCurso.cursosByAlumno(usuario.getId());
+		ArrayList<Curso> allCursos = daoCurso.listar();
 		
 		request.setAttribute("cursos", cursos);
-		request.getRequestDispatcher("profesor.jsp").forward(request, response);
+		request.setAttribute("allCursos", allCursos);
+		request.getRequestDispatcher("alumno.jsp").forward(request, response);
+		
+		
+		
+		
 	}
 
 	/**

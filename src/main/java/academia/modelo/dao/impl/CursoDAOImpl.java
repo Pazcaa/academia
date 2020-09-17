@@ -52,6 +52,30 @@ public class CursoDAOImpl implements CursoDAO {
 													"	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'\n" + 
 													"	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = ?;";
 	
+	private final static String SQL_CURSOS_ALUMNO = "	SELECT\n" + 
+													"	c.id 'id_curso',\n" + 
+													"	c.curso 'nombre_curso',\n" + 
+													"	c.identificador 'identificador',\n" + 
+													"	c.horas 'horas',\n" + 
+													"	u.nombre 'nombre_profesor',\n" +
+													"	u.apellidos 'apellido_profesor'\n" +
+													"	FROM alumnosCurso ac , usuarios u , cursos c \n" + 
+													"	WHERE ac.idCurso = c.id AND c.idProfesor = u.id AND ac.idAlumno = ? ;";
+	
+	private final static String SQL_CURSO_BY_ID = "	SELECT\n" + 
+												"	id 'id_curso', \n" + 
+												"	curso 'nombre_curso',\n" + 
+												"	identificador,\n" + 
+												"	horas, \n" + 
+												"	idProfesor \n" + 
+												"	FROM cursos  WHERE id =? AND idProfesor = ?; ";
+	
+	private final static String SQL_INSERT_CURSO = "INSERT INTO cursos (curso, identificador, horas, idProfesor ) VALUES (?, ?, ?, ?);";
+	
+	private final static String SQL_INSERT_ALUMNO_CURSO = " INSERT INTO alumnosCurso (idAlumno, idCurso) VALUES (? , ?);";
+	
+	private final static String SQL_DELETE_CURSO = "DELETE FROM cursos WHERE id = ? AND idProfesor = ? ;";
+	
 	@Override
 	public ArrayList<Curso> listar() {
 		System.out.println(SQL_LISTAR);
@@ -121,5 +145,153 @@ public class CursoDAOImpl implements CursoDAO {
 		
 		return cursos;
 	}
+	
+	@Override
+	public ArrayList<Curso> cursosByAlumno(int id_usuario) {
+		ArrayList<Curso> cursos = new ArrayList<Curso>();
+		
+		try (Connection con = ConnectionManager.getConnection();
+				PreparedStatement pst = con.prepareStatement(SQL_CURSOS_ALUMNO);
+				){
+			
+			pst.setInt(1, id_usuario);
+			
+			try (ResultSet rs = pst.executeQuery();
+					) {
+				while (rs.next()) {
+					
+					Curso curso = new Curso();
+					curso.setId(rs.getInt("id_curso"));
+					curso.setNombre(rs.getString("nombre_curso"));
+					curso.setIdentificador(rs.getString("identificador"));
+					curso.setHoras(rs.getInt("horas"));
+					
+					Usuario p = new Usuario();
+					p.setNombre(rs.getString("nombre_profesor"));
+					p.setApellidos(rs.getString("apellido_profesor"));
+					
+					curso.setProfesor(p);
+					
+					cursos.add(curso);
+					
+				}
+			} 
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return cursos;
+	}
+	
+	@Override
+	public Curso getById(int idCurso, int idUsuario) throws Exception {
+		Curso curso = new Curso();
+		
+		try (Connection con = ConnectionManager.getConnection();
+				PreparedStatement pst = con.prepareStatement(SQL_CURSO_BY_ID);){
+			
+			pst.setInt(1, idCurso);
+			pst.setInt(2, idUsuario);
+			
+			try (ResultSet rs = pst.executeQuery();) {
+				if (rs.next()) {
+					
+					curso.setId(rs.getInt("id_curso"));
+					curso.setNombre(rs.getString("nombre_curso"));
+					curso.setIdentificador(rs.getString("identificador"));
+					curso.setHoras(rs.getInt("horas"));
+					
+					
+					Usuario profesor = new Usuario();
+					profesor.setId(rs.getInt("idProfesor"));
+					
+					curso.setProfesor(profesor);
+					
+				}else {
+					throw new Exception();
+					
+				}
+			
+		}
+		}
+		
+		return curso;
+	}
+
+	@Override
+	public Curso insert(Curso pojo) throws Exception {
+		
+		try (Connection con = ConnectionManager.getConnection();
+				PreparedStatement pst = con.prepareStatement(SQL_INSERT_CURSO);
+				) {
+			
+			pst.setString(1,pojo.getNombre());
+			pst.setString(2, pojo.getIdentificador());
+			pst.setInt(3, pojo.getHoras());
+			pst.setInt(4, pojo.getProfesor().getId());
+			
+			int affectedRows = pst.executeUpdate();
+			if (affectedRows == 1) {
+				// conseguir el ID que nos ha arrojado
+			
+				try (ResultSet rskeys = pst.getGeneratedKeys()) {
+					if (rskeys.next()) {
+						int id = rskeys.getInt(1);
+						pojo.setId(id);
+					}
+				}
+			}else {
+						throw new Exception("No se ha podido guardar el registro" + pojo);
+					}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return pojo;
+	}
+	
+	@Override
+	public Curso insertByAlumno(int idUsuario, int idCurso) throws Exception {
+		Curso curso = new Curso();
+		
+		try (Connection con = ConnectionManager.getConnection();
+				PreparedStatement pst = con.prepareStatement(SQL_INSERT_ALUMNO_CURSO); ) {
+			
+			pst.setInt(1, idUsuario);
+			pst.setInt(2, idCurso);
+			
+			pst.executeUpdate();
+		} 
+		
+		return curso;
+	}
+
+	@Override
+	public Curso delete(int idCurso, int idUsuario) throws Exception {
+		
+		Curso curso = getById(idCurso, idUsuario);
+		
+		try (Connection con = ConnectionManager.getConnection();
+				PreparedStatement pst = con.prepareStatement(SQL_DELETE_CURSO); ){
+			
+			pst.setInt(1, idCurso);
+			pst.setInt(2, idUsuario);
+			
+			pst.executeUpdate();
+			
+		} 
+		
+		return curso;
+	}
+
+	
+
+	
+
+
+
+	
 
 }

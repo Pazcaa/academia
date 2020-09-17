@@ -13,7 +13,7 @@
 
 
 
-		<table class="table table table-sm table-bordered table-info">
+		<table class="table table-sm table-bordered table-info" >
 		  <thead>
 		    <tr>
 		      <th scope="col">id</th>

@@ -1,9 +1,12 @@
  // ejecuta la funcion cuando todo el documento de html DOM este listo y cargado
-      $(document).ready(function() {
-          // seleccion por id => #example y ejecuta el plugin .DataTable();
-          $('#table').DataTable();
-      });
       
+		$(document).ready(function() {
+		    $('#table').DataTable();
+		   
+		$('[data-toggle="popover"]').popover()
+		    	
+		} );
+
       function confirmar(nombre) {
     		
     		// The confirm() method returns true if the user clicked "OK", and false otherwise. 

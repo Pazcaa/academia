@@ -34,12 +34,12 @@
 	  <nav class="my-2 my-md-0 mr-md-3 navbar-dark">
 	  
 		<c:if test="${'2' eq usuario_login.rol }">
-	    <a class="py-2 d-none d-md-inline-block  ${ ( 'profesor' eq param.pagina ) ? 'active' : '' }" href="profesor.jsp">${usuario_login.nombre} ${usuario_login.apellidos}</a>
+	    <a class="py-2 d-none d-md-inline-block  ${ ( 'profesor' eq param.pagina ) ? 'active' : '' }" href="panel-profesor">${usuario_login.nombre} ${usuario_login.apellidos}</a>
 	   
 		</c:if>
 		
 		<c:if test="${'1' eq usuario_login.rol }">
-		<a class="py-2 d-none d-md-inline-block  ${ ( 'alumno' eq param.pagina ) ? 'active' : '' }" href="alumno.jsp">${usuario_login.nombre} ${usuario_login.apellidos}</a>
+		<a class="py-2 d-none d-md-inline-block  ${ ( 'alumno' eq param.pagina ) ? 'active' : '' }" href="panel-alumno">${usuario_login.nombre} ${usuario_login.apellidos}</a>
 		</c:if>
 		
 	  </nav>

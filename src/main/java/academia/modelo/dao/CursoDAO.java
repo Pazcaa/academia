@@ -16,6 +16,22 @@ public interface CursoDAO {
 	
 	ArrayList<Curso> cursosByProfesor (int id_usuario);
 	
+	/**
+	 * Obtiene todos los cursos asociados a un alumno
+	 * @param id_usuario
+	 * @return
+	 */
+	
+	ArrayList<Curso> cursosByAlumno (int id_usuario);
+	
+	Curso insert(Curso pojo) throws Exception;
+	
+	Curso delete (int idCurso, int idUsuario) throws Exception;
+	
+	Curso getById (int idCurso, int idUsuario) throws Exception;
+	
+	Curso insertByAlumno (int idUsuario, int idCurso) throws Exception;
+	
 	
 	
 }
