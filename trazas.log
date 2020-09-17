@@ -1,0 +1,1 @@
+2020-09-17 22:31:57.907 ERROR academia.controller.CrearCursoController.doPost(CrearCursoController.java:66) - java.lang.NumberFormatException: For input string: " 460"

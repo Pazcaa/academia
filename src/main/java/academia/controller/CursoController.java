@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import academia.modelo.dao.CursoDAO;
 import academia.modelo.dao.impl.CursoDAOImpl;
 import academia.modelo.pojo.Curso;
@@ -20,6 +22,8 @@ import academia.modelo.pojo.Curso;
 public class CursoController extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
+	private final static Logger LOG = Logger.getLogger(CursoController.class);
+	private final static CursoDAOImpl dao = CursoDAOImpl.getInstance(); 
   
 
 	/**
@@ -28,13 +32,18 @@ public class CursoController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		ArrayList<Curso> cursos = new ArrayList<Curso>();
-		//TODO singleton
-		CursoDAO dao = new CursoDAOImpl();
 		
-		cursos = dao.listar();
+		try {
+			cursos = dao.listar();
+			
+		} catch (Exception e) {
+			LOG.error(e);
+		}finally {
+			request.setAttribute("cursos", cursos);
+			request.getRequestDispatcher("cursos.jsp").forward(request, response);
+		}
 		
-		request.setAttribute("cursos", cursos);
-		request.getRequestDispatcher("cursos.jsp").forward(request, response);
+		
 	}
 
 }

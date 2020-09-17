@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
 
 import academia.modelo.ConnectionManager;
 import academia.modelo.dao.CursoDAO;
@@ -14,6 +15,7 @@ import academia.modelo.pojo.Usuario;
 
 public class CursoDAOImpl implements CursoDAO {
 
+	private final static Logger LOG = Logger.getLogger(CursoDAOImpl.class);
 	private static CursoDAOImpl INSTANCE = null; //patron singleton
 	
 	//constructor del INSTANCE
@@ -78,13 +80,15 @@ public class CursoDAOImpl implements CursoDAO {
 	
 	@Override
 	public ArrayList<Curso> listar() {
-		System.out.println(SQL_LISTAR);
+		//System.out.println(SQL_LISTAR);
 		
 		ArrayList<Curso> cursos = new ArrayList<Curso>();
 		
 		try ( Connection con = ConnectionManager.getConnection();
 			PreparedStatement pst = con.prepareStatement(SQL_LISTAR);
 			ResultSet rs = pst.executeQuery()	){
+			
+			LOG.debug(pst);
 			
 			while (rs.next()) {
 				Curso c = new Curso();
@@ -105,7 +109,7 @@ public class CursoDAOImpl implements CursoDAO {
 			}
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOG.error(e);
 		}
 		
 		return cursos ;
@@ -124,6 +128,8 @@ public class CursoDAOImpl implements CursoDAO {
 			
 			pst.setInt(1, id_usuario);
 			
+			LOG.debug(pst);
+			
 			try (ResultSet rs = pst.executeQuery();
 					) {
 				while (rs.next()) {
@@ -140,7 +146,7 @@ public class CursoDAOImpl implements CursoDAO {
 			} 
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOG.error(e);
 		}
 		
 		return cursos;
@@ -155,6 +161,8 @@ public class CursoDAOImpl implements CursoDAO {
 				){
 			
 			pst.setInt(1, id_usuario);
+			
+			LOG.debug(pst);
 			
 			try (ResultSet rs = pst.executeQuery();
 					) {
@@ -178,7 +186,7 @@ public class CursoDAOImpl implements CursoDAO {
 			} 
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOG.error(e);
 		}
 		
 		return cursos;
@@ -193,6 +201,8 @@ public class CursoDAOImpl implements CursoDAO {
 			
 			pst.setInt(1, idCurso);
 			pst.setInt(2, idUsuario);
+			
+			LOG.debug(pst);
 			
 			try (ResultSet rs = pst.executeQuery();) {
 				if (rs.next()) {
@@ -231,6 +241,8 @@ public class CursoDAOImpl implements CursoDAO {
 			pst.setInt(3, pojo.getHoras());
 			pst.setInt(4, pojo.getProfesor().getId());
 			
+			LOG.debug(pst);
+			
 			int affectedRows = pst.executeUpdate();
 			if (affectedRows == 1) {
 				// conseguir el ID que nos ha arrojado
@@ -246,7 +258,7 @@ public class CursoDAOImpl implements CursoDAO {
 					}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOG.error(e);
 		}
 		
 		return pojo;
@@ -263,6 +275,8 @@ public class CursoDAOImpl implements CursoDAO {
 			pst.setInt(2, idCurso);
 			
 			pst.executeUpdate();
+			
+			LOG.debug(pst);
 		} 
 		
 		return curso;
@@ -280,6 +294,8 @@ public class CursoDAOImpl implements CursoDAO {
 			pst.setInt(2, idUsuario);
 			
 			pst.executeUpdate();
+			
+			LOG.debug(pst);
 			
 		} 
 		

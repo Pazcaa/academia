@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
+
 import academia.modelo.dao.impl.CursoDAOImpl;
 import academia.modelo.dao.impl.UsuarioDAOImpl;
 import academia.modelo.pojo.Curso;
@@ -22,6 +24,7 @@ import academia.modelo.pojo.Usuario;
 @WebServlet("/login")
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private final static Logger LOG = Logger.getLogger(LoginController.class);
 	private static UsuarioDAOImpl daoUsuario = UsuarioDAOImpl.getInstance();
 	private static CursoDAOImpl daoCurso = CursoDAOImpl.getInstance();
 			
@@ -51,47 +54,49 @@ public class LoginController extends HttpServlet {
 		//recupero el usuario
 		Usuario usuario = daoUsuario.existe(nombre, apellido, password);
 		
-		
-		
-		
-		if (usuario != null) {
+		try {
 			
-			session.setMaxInactiveInterval(60 * 5);//tras 5 min sin peticiones se desconecta automaticamente
-			session.setAttribute("usuario_login", usuario);
+			if (usuario != null) {
+				
+				session.setMaxInactiveInterval(60 * 5);//tras 5 min sin peticiones se desconecta automaticamente
+				session.setAttribute("usuario_login", usuario);
+				
+				request.setAttribute("mensaje", usuario.getNombre() + " " + usuario.getApellidos() + " se ha conectado con exito");
+				//request.getRequestDispatcher("inicio").forward(request, response);
+				
+				if (usuario.getRol() == usuario.ROL_ALUMNO) {
+					
+					ArrayList<Curso> cursos = daoCurso.cursosByAlumno(usuario.getId());
+					
+					ArrayList<Curso> allCursos = daoCurso.listar();
+					
+					request.setAttribute("cursos", cursos);
+					request.setAttribute("allCursos", allCursos);
+					request.getRequestDispatcher("alumno.jsp").forward(request, response);
+					
+				}else {
+					
+					
+					ArrayList<Curso> cursos = daoCurso.cursosByProfesor(usuario.getId());
+					
+					request.setAttribute("cursos", cursos);
+					request.getRequestDispatcher("profesor.jsp").forward(request, response);
+				}
 			
-			request.setAttribute("mensaje", usuario.getNombre() + " " + usuario.getApellidos() + " se ha conectado con exito");
-			//request.getRequestDispatcher("inicio").forward(request, response);
-			
-			if (usuario.getRol() == usuario.ROL_ALUMNO) {
-				
-				ArrayList<Curso> cursos = daoCurso.cursosByAlumno(usuario.getId());
-				
-				ArrayList<Curso> allCursos = daoCurso.listar();
-				
-				request.setAttribute("cursos", cursos);
-				request.setAttribute("allCursos", allCursos);
-				request.getRequestDispatcher("alumno.jsp").forward(request, response);
 				
 			}else {
+				request.setAttribute("nombre", nombre);
+				request.setAttribute("apellidos", apellido);
+				request.setAttribute("mensaje", "Sus datos son incorrectos, vuelva a intentarlo");
+				request.getRequestDispatcher("login.jsp").forward(request, response);
 				
-				
-				ArrayList<Curso> cursos = daoCurso.cursosByProfesor(usuario.getId());
-				
-				request.setAttribute("cursos", cursos);
-				request.getRequestDispatcher("profesor.jsp").forward(request, response);
 			}
-		
 			
-		}else {
-			request.setAttribute("nombre", nombre);
-			request.setAttribute("apellidos", apellido);
-			request.setAttribute("mensaje", "Sus datos son incorrectos, vuelva a intentarlo");
-			request.getRequestDispatcher("login.jsp").forward(request, response);
 			
+		} catch (Exception e) {
+			LOG.error(e);
 		}
-		
-		
-		
+	
 	}
 
 }

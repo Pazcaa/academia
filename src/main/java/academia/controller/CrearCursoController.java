@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
+
 import academia.modelo.dao.impl.CursoDAOImpl;
 import academia.modelo.pojo.Curso;
 import academia.modelo.pojo.Usuario;
@@ -18,6 +20,7 @@ import academia.modelo.pojo.Usuario;
 @WebServlet("/crear-curso")
 public class CrearCursoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private final static Logger LOG = Logger.getLogger(CrearCursoController.class);
 	private static CursoDAOImpl daoCurso = CursoDAOImpl.getInstance();
 
 	/**
@@ -60,6 +63,7 @@ public class CrearCursoController extends HttpServlet {
 			mensaje = "Su nuevo curso ha sido agregado con exito";
 			
 		} catch (Exception e) {
+			LOG.error(e);
 			
 			mensaje = "No se ha podido añadir su nuevo curso, por favor vuelva intentarlo";
 			

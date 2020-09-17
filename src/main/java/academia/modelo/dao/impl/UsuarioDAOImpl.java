@@ -4,12 +4,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import org.apache.log4j.Logger;
+
 import academia.modelo.ConnectionManager;
 import academia.modelo.dao.UsuarioDAO;
 import academia.modelo.pojo.Usuario;
 
 public class UsuarioDAOImpl implements UsuarioDAO{
 	
+	private final static Logger LOG = Logger.getLogger(UsuarioDAOImpl.class);
 	private static UsuarioDAOImpl INSTANCE = null; //patron singleton
 	
 	//constructor del INSTANCE
@@ -45,6 +48,8 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 			pst.setString(2, apellido);
 			pst.setString(3, password);
 			
+			LOG.debug(pst);
+			
 			try (ResultSet rs = pst.executeQuery();){
 				if (rs.next()) {
 					usuario = new Usuario();
@@ -57,7 +62,7 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 			} 
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOG.error(e);
 		}
 		
 		return usuario;

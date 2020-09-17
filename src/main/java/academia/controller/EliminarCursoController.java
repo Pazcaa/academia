@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
+
 import academia.modelo.dao.impl.CursoDAOImpl;
 import academia.modelo.pojo.Usuario;
 
@@ -17,6 +19,7 @@ import academia.modelo.pojo.Usuario;
 @WebServlet("/eliminar-curso")
 public class EliminarCursoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private final static Logger LOG = Logger.getLogger(EliminarCursoController.class);
 	private static CursoDAOImpl daoCurso = CursoDAOImpl.getInstance();
    
 
@@ -42,6 +45,8 @@ public class EliminarCursoController extends HttpServlet {
 			mensaje = "Su curso ha sido eliminado con exito";
 			
 		} catch (Exception e) {
+			
+			LOG.error(e);
 			mensaje = "No se puede eliminar el curso, porfavor, vuelva a intentarlo";
 			
 		}finally {

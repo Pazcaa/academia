@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
+
 import academia.modelo.dao.impl.CursoDAOImpl;
 import academia.modelo.pojo.Curso;
 import academia.modelo.pojo.Usuario;
@@ -20,6 +22,7 @@ import academia.modelo.pojo.Usuario;
 @WebServlet("/panel-alumno")
 public class AlumnoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private final static Logger LOG = Logger.getLogger(AlumnoController.class);
 	private static CursoDAOImpl daoCurso = CursoDAOImpl.getInstance();
   
 
@@ -30,14 +33,22 @@ public class AlumnoController extends HttpServlet {
 		HttpSession session = request.getSession();
 		Usuario usuario = (Usuario)session.getAttribute("usuario_login");
 		
-		ArrayList<Curso> cursos = daoCurso.cursosByAlumno(usuario.getId());
-		ArrayList<Curso> allCursos = daoCurso.listar();
-		
-		request.setAttribute("cursos", cursos);
-		request.setAttribute("allCursos", allCursos);
-		request.getRequestDispatcher("alumno.jsp").forward(request, response);
-		
-		
+		try {
+			
+			ArrayList<Curso> cursos = daoCurso.cursosByAlumno(usuario.getId());
+			
+			ArrayList<Curso> allCursos = daoCurso.listar();
+			
+			request.setAttribute("cursos", cursos);
+			request.setAttribute("allCursos", allCursos);
+			
+		} catch (Exception e) {
+			LOG.error(e);
+			
+		}finally {
+			
+			request.getRequestDispatcher("alumno.jsp").forward(request, response);
+		}
 		
 		
 	}
