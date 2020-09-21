@@ -56,20 +56,23 @@ public class CrearCursoController extends HttpServlet {
 		HttpSession session = request.getSession();
 		Usuario usuario = (Usuario)session.getAttribute("usuario_login");
 		
-		Set<ConstraintViolation<Usuario>> violations = validator.validate(usuario);
+		
 		
 		try {
 			
+
+			int horas = Integer.parseInt(pHoras);
+			//int idProfesor = usuario.getId();
+			
+			curso.setNombre(pCurso);
+			curso.setIdentificador(pIdentificador);
+			curso.setHoras(horas);
+			curso.setProfesor(usuario);
+			
+			Set<ConstraintViolation<Curso>> violations = validator.validate(curso);
+			
 			if (violations.isEmpty()) { //si no hay problemas de validación
 			
-				
-				int horas = Integer.parseInt(pHoras);
-				//int idProfesor = usuario.getId();
-				
-				curso.setNombre(pCurso);
-				curso.setIdentificador(pIdentificador);
-				curso.setHoras(horas);
-				curso.setProfesor(usuario);
 				
 				daoCurso.insert(curso);
 				
@@ -79,7 +82,7 @@ public class CrearCursoController extends HttpServlet {
 				
 				String error = "";
 				
-				for (ConstraintViolation<Usuario> cViolation : violations) {
+				for (ConstraintViolation<Curso> cViolation : violations) {
 					
 					error += "<p>" + cViolation.getPropertyPath() + ": " + cViolation.getMessage() +  "</p>";
 				}

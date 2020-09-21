@@ -2,7 +2,6 @@ package academia.modelo.pojo;
 
 import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.NotBlank;
 
 public class Usuario {
 	
@@ -11,11 +10,11 @@ public class Usuario {
 
 	private int id;
 	
-	@NotBlank
+	
 	@Size(min = 2 , max = 100, message = "Debe contener entre 2 y 100 caracteres")
 	private String nombre;
 	
-	@NotBlank
+	
 	@Size(min = 2 , max = 100, message = "Debe contener entre 2 y 100 caracteres")
 	private String apellidos;
 	
