@@ -21,7 +21,7 @@ public class Usuario {
 	
 	private int rol;
 	
-	
+	@Size(min = 4 , max = 6, message = "Debe contener entre 4 y 6 caracteres")
 	private String password;
 	
 	public Usuario() {

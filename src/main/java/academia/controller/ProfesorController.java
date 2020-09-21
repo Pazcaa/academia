@@ -43,7 +43,7 @@ public class ProfesorController extends HttpServlet {
 			LOG.error(e);
 		}finally {
 
-			request.getRequestDispatcher("profesor.jsp").forward(request, response);
+			request.getRequestDispatcher("privado/profesor.jsp").forward(request, response);
 		}
 		
 		

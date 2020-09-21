@@ -72,7 +72,7 @@ public class LoginController extends HttpServlet {
 					
 					request.setAttribute("cursos", cursos);
 					request.setAttribute("allCursos", allCursos);
-					request.getRequestDispatcher("alumno.jsp").forward(request, response);
+					request.getRequestDispatcher("privado/alumno.jsp").forward(request, response);
 					
 				}else {
 					
@@ -80,7 +80,7 @@ public class LoginController extends HttpServlet {
 					ArrayList<Curso> cursos = daoCurso.cursosByProfesor(usuario.getId());
 					
 					request.setAttribute("cursos", cursos);
-					request.getRequestDispatcher("profesor.jsp").forward(request, response);
+					request.getRequestDispatcher("privado/profesor.jsp").forward(request, response);
 				}
 			
 				

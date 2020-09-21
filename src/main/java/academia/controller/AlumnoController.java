@@ -47,7 +47,7 @@ public class AlumnoController extends HttpServlet {
 			
 		}finally {
 			
-			request.getRequestDispatcher("alumno.jsp").forward(request, response);
+			request.getRequestDispatcher("privado/alumno.jsp").forward(request, response);
 		}
 		
 		

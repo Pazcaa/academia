@@ -20,6 +20,9 @@
 		<!--Nuestro CSS-->
 	<link rel="stylesheet" href="css/style.css">
 	
+	 <!-- Todas las rutas relativas comienzan por el href indicado -->    
+        <base href="${pageContext.request.contextPath}/"/>
+	
     <title>${param.title} |Academia</title>
   </head>
   <body>
