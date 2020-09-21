@@ -1,1 +1,448 @@
 2020-09-17 22:31:57.907 ERROR academia.controller.CrearCursoController.doPost(CrearCursoController.java:66) - java.lang.NumberFormatException: For input string: " 460"
+2020-09-21 10:46:25.427 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:91) - com.mysql.jdbc.JDBC42PreparedStatement@15d151de:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id ;
+2020-09-21 10:49:27.575 DEBUG academia.modelo.dao.impl.UsuarioDAOImpl.existe(UsuarioDAOImpl.java:51) - com.mysql.jdbc.JDBC42PreparedStatement@433529e9:  SELECT u.id , u.nombre, u.apellidos, u.rol, u.password
+ FROM usuarios u  WHERE nombre = 'Ander' AND apellidos = 'Uraga' AND password = MD5('123456');
+2020-09-21 10:49:27.589 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:131) - com.mysql.jdbc.JDBC42PreparedStatement@5a82fb11:  SELECT 
+	c.id 'id_curso',
+	c.curso 'curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.id 'id_profesor',
+	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'
+	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = 2;
+2020-09-21 10:49:56.789 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:91) - com.mysql.jdbc.JDBC42PreparedStatement@79bd2c1:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id ;
+2020-09-21 10:49:59.139 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:131) - com.mysql.jdbc.JDBC42PreparedStatement@4c990b9a:  SELECT 
+	c.id 'id_curso',
+	c.curso 'curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.id 'id_profesor',
+	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'
+	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = 2;
+2020-09-21 10:57:24.282 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:91) - com.mysql.jdbc.JDBC42PreparedStatement@bdf087e:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id ;
+2020-09-21 10:57:38.244 DEBUG academia.modelo.dao.impl.UsuarioDAOImpl.existe(UsuarioDAOImpl.java:51) - com.mysql.jdbc.JDBC42PreparedStatement@33639c2:  SELECT u.id , u.nombre, u.apellidos, u.rol, u.password
+ FROM usuarios u  WHERE nombre = 'Elier' AND apellidos = 'Otero' AND password = MD5('123456');
+2020-09-21 10:57:38.258 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByAlumno(CursoDAOImpl.java:165) - com.mysql.jdbc.JDBC42PreparedStatement@3af02570: 	SELECT
+	c.id 'id_curso',
+	c.curso 'nombre_curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.nombre 'nombre_profesor',
+	u.apellidos 'apellido_profesor'
+	FROM alumnosCurso ac , usuarios u , cursos c 
+	WHERE ac.idCurso = c.id AND c.idProfesor = u.id AND ac.idAlumno = 4 ;
+2020-09-21 10:57:38.267 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:91) - com.mysql.jdbc.JDBC42PreparedStatement@2c935269:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id ;
+2020-09-21 10:57:45.013 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:91) - com.mysql.jdbc.JDBC42PreparedStatement@5cd3aa0f:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id ;
+2020-09-21 10:58:05.482 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByAlumno(CursoDAOImpl.java:165) - com.mysql.jdbc.JDBC42PreparedStatement@6d8bfeee: 	SELECT
+	c.id 'id_curso',
+	c.curso 'nombre_curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.nombre 'nombre_profesor',
+	u.apellidos 'apellido_profesor'
+	FROM alumnosCurso ac , usuarios u , cursos c 
+	WHERE ac.idCurso = c.id AND c.idProfesor = u.id AND ac.idAlumno = 4 ;
+2020-09-21 10:58:05.493 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:91) - com.mysql.jdbc.JDBC42PreparedStatement@618c414d:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id ;
+2020-09-21 10:58:35.610 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:91) - com.mysql.jdbc.JDBC42PreparedStatement@37a86970:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id ;
+2020-09-21 12:01:42.783 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:91) - com.mysql.jdbc.JDBC42PreparedStatement@491e11a4:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id ;
+2020-09-21 12:01:57.752 DEBUG academia.modelo.dao.impl.UsuarioDAOImpl.existe(UsuarioDAOImpl.java:51) - com.mysql.jdbc.JDBC42PreparedStatement@426c16c2:  SELECT u.id , u.nombre, u.apellidos, u.rol, u.password
+ FROM usuarios u  WHERE nombre = 'Ander' AND apellidos = 'Uraga' AND password = MD5('123456');
+2020-09-21 12:01:57.781 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:131) - com.mysql.jdbc.JDBC42PreparedStatement@3298b9b5:  SELECT 
+	c.id 'id_curso',
+	c.curso 'curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.id 'id_profesor',
+	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'
+	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = 2;
+2020-09-21 12:02:13.996 DEBUG org.hibernate.validator.internal.util.logging.LoggerFactory.make(LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-09-21 12:02:13.997 INFO  org.hibernate.validator.internal.util.Version.<clinit>(Version.java:30) - HV000001: Hibernate Validator 5.2.4.Final
+2020-09-21 12:02:14.053 DEBUG org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2020-09-21 12:02:14.100 DEBUG org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+2020-09-21 12:02:14.116 DEBUG org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+2020-09-21 12:02:14.117 DEBUG org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2020-09-21 12:02:14.117 DEBUG org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+2020-09-21 12:02:14.402 DEBUG org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl.parseComposingConstraints(ConstraintDescriptorImpl.java:640) - Adding composing constraint: ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@4abe978b, groups=[Ljava.lang.Class;@1cedae88}, constraintType=GENERIC}.
+2020-09-21 12:02:14.413 DEBUG org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl.parseComposingConstraints(ConstraintDescriptorImpl.java:640) - Adding composing constraint: ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@65854c51, groups=[Ljava.lang.Class;@25c676a6}, constraintType=GENERIC}.
+2020-09-21 12:02:14.414 DEBUG org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl.parseComposingConstraints(ConstraintDescriptorImpl.java:640) - Adding composing constraint: ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@5a9491cf, groups=[Ljava.lang.Class;@3cad347b}, constraintType=GENERIC}.
+2020-09-21 12:02:14.510 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Ander against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@4abe978b, groups=[Ljava.lang.Class;@1cedae88}, constraintType=GENERIC}.
+2020-09-21 12:02:14.527 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Ander against constraint defined by ConstraintDescriptorImpl{annotation=org.hibernate.validator.constraints.NotBlank, payloads=[], hasComposingConstraints=false, isReportAsSingleInvalidConstraint=true, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={org.hibernate.validator.constraints.NotBlank.message}, payload=[Ljava.lang.Class;@37b8fec4, groups=[Ljava.lang.Class;@1239a705}, constraintType=GENERIC}.
+2020-09-21 12:02:14.531 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value 2 against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.Size, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={groups=[Ljava.lang.Class;@4ba31a6e, min=0, message=1 para rol alumno, 2 para rol profesor, payload=[Ljava.lang.Class;@9344741, max=1}, constraintType=GENERIC}.
+2020-09-21 12:03:24.368 DEBUG academia.modelo.dao.impl.UsuarioDAOImpl.existe(UsuarioDAOImpl.java:51) - com.mysql.jdbc.JDBC42PreparedStatement@6a0afa51:  SELECT u.id , u.nombre, u.apellidos, u.rol, u.password
+ FROM usuarios u  WHERE nombre = 'Ander' AND apellidos = 'Uraga' AND password = MD5('123456');
+2020-09-21 12:03:24.377 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:131) - com.mysql.jdbc.JDBC42PreparedStatement@5b6c4664:  SELECT 
+	c.id 'id_curso',
+	c.curso 'curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.id 'id_profesor',
+	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'
+	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = 2;
+2020-09-21 12:03:28.596 DEBUG org.hibernate.validator.internal.util.logging.LoggerFactory.make(LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-09-21 12:03:28.601 INFO  org.hibernate.validator.internal.util.Version.<clinit>(Version.java:30) - HV000001: Hibernate Validator 5.2.4.Final
+2020-09-21 12:03:28.633 DEBUG org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2020-09-21 12:03:28.666 DEBUG org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+2020-09-21 12:03:28.669 DEBUG org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+2020-09-21 12:03:28.670 DEBUG org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2020-09-21 12:03:28.671 DEBUG org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+2020-09-21 12:03:28.877 DEBUG org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl.parseComposingConstraints(ConstraintDescriptorImpl.java:640) - Adding composing constraint: ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@72ce38ad, groups=[Ljava.lang.Class;@51c067b}, constraintType=GENERIC}.
+2020-09-21 12:03:28.885 DEBUG org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl.parseComposingConstraints(ConstraintDescriptorImpl.java:640) - Adding composing constraint: ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@2fd25779, groups=[Ljava.lang.Class;@226f64e2}, constraintType=GENERIC}.
+2020-09-21 12:03:28.903 DEBUG org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl.parseComposingConstraints(ConstraintDescriptorImpl.java:640) - Adding composing constraint: ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@6b665b45, groups=[Ljava.lang.Class;@56b2a0cf}, constraintType=GENERIC}.
+2020-09-21 12:03:28.906 DEBUG org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl.parseComposingConstraints(ConstraintDescriptorImpl.java:640) - Adding composing constraint: ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@fa3868f, groups=[Ljava.lang.Class;@5d34eee7}, constraintType=GENERIC}.
+2020-09-21 12:03:29.065 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value e10adc3949ba59abbe56e057f20f883e against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.Size, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={groups=[Ljava.lang.Class;@11c84cf1, min=6, message=Debe contener 6 caracteres, payload=[Ljava.lang.Class;@4c1c5e75, max=6}, constraintType=GENERIC}.
+2020-09-21 12:03:29.083 TRACE org.hibernate.validator.resourceloading.PlatformResourceBundleLocator.loadBundle(PlatformResourceBundleLocator.java:151) - ValidationMessages not found by thread context classloader
+2020-09-21 12:03:29.083 TRACE org.hibernate.validator.resourceloading.PlatformResourceBundleLocator.loadBundle(PlatformResourceBundleLocator.java:151) - ValidationMessages not found by validator classloader
+2020-09-21 12:03:29.084 DEBUG org.hibernate.validator.resourceloading.PlatformResourceBundleLocator.getResourceBundle(PlatformResourceBundleLocator.java:126) - ValidationMessages not found.
+2020-09-21 12:03:29.088 TRACE org.hibernate.validator.resourceloading.PlatformResourceBundleLocator.loadBundle(PlatformResourceBundleLocator.java:151) - ContributorValidationMessages not found by thread context classloader
+2020-09-21 12:03:29.089 TRACE org.hibernate.validator.resourceloading.PlatformResourceBundleLocator.loadBundle(PlatformResourceBundleLocator.java:151) - ContributorValidationMessages not found by validator classloader
+2020-09-21 12:03:29.089 DEBUG org.hibernate.validator.resourceloading.PlatformResourceBundleLocator.getResourceBundle(PlatformResourceBundleLocator.java:126) - ContributorValidationMessages not found.
+2020-09-21 12:03:29.106 DEBUG org.hibernate.validator.resourceloading.PlatformResourceBundleLocator.getResourceBundle(PlatformResourceBundleLocator.java:123) - org.hibernate.validator.ValidationMessages found.
+2020-09-21 12:03:29.118 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Ander against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@72ce38ad, groups=[Ljava.lang.Class;@51c067b}, constraintType=GENERIC}.
+2020-09-21 12:03:29.119 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Ander against constraint defined by ConstraintDescriptorImpl{annotation=org.hibernate.validator.constraints.NotBlank, payloads=[], hasComposingConstraints=false, isReportAsSingleInvalidConstraint=true, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={org.hibernate.validator.constraints.NotBlank.message}, payload=[Ljava.lang.Class;@5e68a680, groups=[Ljava.lang.Class;@1283a3f9}, constraintType=GENERIC}.
+2020-09-21 12:03:29.120 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Uraga against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@2fd25779, groups=[Ljava.lang.Class;@226f64e2}, constraintType=GENERIC}.
+2020-09-21 12:03:29.135 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManager.getInitializedValidator(ConstraintValidatorManager.java:113) - Constraint validator org.hibernate.validator.internal.constraintvalidators.bv.NotNullValidator@95585fd found in cache.
+2020-09-21 12:03:29.136 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Uraga against constraint defined by ConstraintDescriptorImpl{annotation=org.hibernate.validator.constraints.NotBlank, payloads=[], hasComposingConstraints=false, isReportAsSingleInvalidConstraint=true, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={org.hibernate.validator.constraints.NotBlank.message}, payload=[Ljava.lang.Class;@5e68a680, groups=[Ljava.lang.Class;@1283a3f9}, constraintType=GENERIC}.
+2020-09-21 12:03:29.137 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManager.getInitializedValidator(ConstraintValidatorManager.java:113) - Constraint validator org.hibernate.validator.internal.constraintvalidators.hv.NotBlankValidator@220de4a5 found in cache.
+2020-09-21 12:03:29.138 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value 2 against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@6b665b45, groups=[Ljava.lang.Class;@56b2a0cf}, constraintType=GENERIC}.
+2020-09-21 12:03:29.139 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value 2 against constraint defined by ConstraintDescriptorImpl{annotation=org.hibernate.validator.constraints.NotBlank, payloads=[], hasComposingConstraints=false, isReportAsSingleInvalidConstraint=true, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={org.hibernate.validator.constraints.NotBlank.message}, payload=[Ljava.lang.Class;@5e68a680, groups=[Ljava.lang.Class;@1283a3f9}, constraintType=GENERIC}.
+2020-09-21 12:04:23.095 DEBUG academia.modelo.dao.impl.UsuarioDAOImpl.existe(UsuarioDAOImpl.java:51) - com.mysql.jdbc.JDBC42PreparedStatement@2eaca5fa:  SELECT u.id , u.nombre, u.apellidos, u.rol, u.password
+ FROM usuarios u  WHERE nombre = 'Ander' AND apellidos = 'Uraga' AND password = MD5('123456');
+2020-09-21 12:04:23.105 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:131) - com.mysql.jdbc.JDBC42PreparedStatement@68184ce5:  SELECT 
+	c.id 'id_curso',
+	c.curso 'curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.id 'id_profesor',
+	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'
+	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = 2;
+2020-09-21 12:04:26.563 DEBUG org.hibernate.validator.internal.util.logging.LoggerFactory.make(LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-09-21 12:04:26.566 INFO  org.hibernate.validator.internal.util.Version.<clinit>(Version.java:30) - HV000001: Hibernate Validator 5.2.4.Final
+2020-09-21 12:04:26.598 DEBUG org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2020-09-21 12:04:26.622 DEBUG org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+2020-09-21 12:04:26.625 DEBUG org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+2020-09-21 12:04:26.626 DEBUG org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2020-09-21 12:04:26.626 DEBUG org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+2020-09-21 12:04:27.026 DEBUG org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl.parseComposingConstraints(ConstraintDescriptorImpl.java:640) - Adding composing constraint: ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@5f25a784, groups=[Ljava.lang.Class;@722ef9a}, constraintType=GENERIC}.
+2020-09-21 12:04:27.042 DEBUG org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl.parseComposingConstraints(ConstraintDescriptorImpl.java:640) - Adding composing constraint: ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@6a340d3e, groups=[Ljava.lang.Class;@2264890d}, constraintType=GENERIC}.
+2020-09-21 12:04:27.044 DEBUG org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl.parseComposingConstraints(ConstraintDescriptorImpl.java:640) - Adding composing constraint: ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@2fc8c8cc, groups=[Ljava.lang.Class;@58ee2d9f}, constraintType=GENERIC}.
+2020-09-21 12:04:27.132 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Uraga against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.Size, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={groups=[Ljava.lang.Class;@77183d14, min=2, message=Debe contener entre 2 y 100 caracteres, payload=[Ljava.lang.Class;@423b36cd, max=100}, constraintType=GENERIC}.
+2020-09-21 12:04:27.165 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Uraga against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@6a340d3e, groups=[Ljava.lang.Class;@2264890d}, constraintType=GENERIC}.
+2020-09-21 12:04:27.169 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Uraga against constraint defined by ConstraintDescriptorImpl{annotation=org.hibernate.validator.constraints.NotBlank, payloads=[], hasComposingConstraints=false, isReportAsSingleInvalidConstraint=true, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={org.hibernate.validator.constraints.NotBlank.message}, payload=[Ljava.lang.Class;@1aa08eb5, groups=[Ljava.lang.Class;@9c03b4d}, constraintType=GENERIC}.
+2020-09-21 12:04:27.171 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Ander against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@5f25a784, groups=[Ljava.lang.Class;@722ef9a}, constraintType=GENERIC}.
+2020-09-21 12:04:27.173 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManager.getInitializedValidator(ConstraintValidatorManager.java:113) - Constraint validator org.hibernate.validator.internal.constraintvalidators.bv.NotNullValidator@38ac7a86 found in cache.
+2020-09-21 12:04:27.173 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Ander against constraint defined by ConstraintDescriptorImpl{annotation=org.hibernate.validator.constraints.NotBlank, payloads=[], hasComposingConstraints=false, isReportAsSingleInvalidConstraint=true, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={org.hibernate.validator.constraints.NotBlank.message}, payload=[Ljava.lang.Class;@1aa08eb5, groups=[Ljava.lang.Class;@9c03b4d}, constraintType=GENERIC}.
+2020-09-21 12:04:27.174 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManager.getInitializedValidator(ConstraintValidatorManager.java:113) - Constraint validator org.hibernate.validator.internal.constraintvalidators.hv.NotBlankValidator@303e348d found in cache.
+2020-09-21 12:04:27.176 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Ander against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.Size, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={groups=[Ljava.lang.Class;@77183d14, min=2, message=Debe contener entre 2 y 100 caracteres, payload=[Ljava.lang.Class;@423b36cd, max=100}, constraintType=GENERIC}.
+2020-09-21 12:04:27.185 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManager.getInitializedValidator(ConstraintValidatorManager.java:113) - Constraint validator org.hibernate.validator.internal.constraintvalidators.bv.size.SizeValidatorForCharSequence@2b8c77ed found in cache.
+2020-09-21 12:04:27.186 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value e10adc3949ba59abbe56e057f20f883e against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@2fc8c8cc, groups=[Ljava.lang.Class;@58ee2d9f}, constraintType=GENERIC}.
+2020-09-21 12:04:27.191 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManager.getInitializedValidator(ConstraintValidatorManager.java:113) - Constraint validator org.hibernate.validator.internal.constraintvalidators.bv.NotNullValidator@38ac7a86 found in cache.
+2020-09-21 12:04:27.192 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value e10adc3949ba59abbe56e057f20f883e against constraint defined by ConstraintDescriptorImpl{annotation=org.hibernate.validator.constraints.NotBlank, payloads=[], hasComposingConstraints=false, isReportAsSingleInvalidConstraint=true, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={org.hibernate.validator.constraints.NotBlank.message}, payload=[Ljava.lang.Class;@1aa08eb5, groups=[Ljava.lang.Class;@9c03b4d}, constraintType=GENERIC}.
+2020-09-21 12:04:27.193 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManager.getInitializedValidator(ConstraintValidatorManager.java:113) - Constraint validator org.hibernate.validator.internal.constraintvalidators.hv.NotBlankValidator@303e348d found in cache.
+2020-09-21 12:04:27.194 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value e10adc3949ba59abbe56e057f20f883e against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.Size, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={groups=[Ljava.lang.Class;@77183d14, min=6, message=Debe contener 6 caracteres, payload=[Ljava.lang.Class;@423b36cd, max=6}, constraintType=GENERIC}.
+2020-09-21 12:04:27.201 TRACE org.hibernate.validator.resourceloading.PlatformResourceBundleLocator.loadBundle(PlatformResourceBundleLocator.java:151) - ValidationMessages not found by thread context classloader
+2020-09-21 12:04:27.204 TRACE org.hibernate.validator.resourceloading.PlatformResourceBundleLocator.loadBundle(PlatformResourceBundleLocator.java:151) - ValidationMessages not found by validator classloader
+2020-09-21 12:04:27.205 DEBUG org.hibernate.validator.resourceloading.PlatformResourceBundleLocator.getResourceBundle(PlatformResourceBundleLocator.java:126) - ValidationMessages not found.
+2020-09-21 12:04:27.209 TRACE org.hibernate.validator.resourceloading.PlatformResourceBundleLocator.loadBundle(PlatformResourceBundleLocator.java:151) - ContributorValidationMessages not found by thread context classloader
+2020-09-21 12:04:27.209 TRACE org.hibernate.validator.resourceloading.PlatformResourceBundleLocator.loadBundle(PlatformResourceBundleLocator.java:151) - ContributorValidationMessages not found by validator classloader
+2020-09-21 12:04:27.222 DEBUG org.hibernate.validator.resourceloading.PlatformResourceBundleLocator.getResourceBundle(PlatformResourceBundleLocator.java:126) - ContributorValidationMessages not found.
+2020-09-21 12:04:27.228 DEBUG org.hibernate.validator.resourceloading.PlatformResourceBundleLocator.getResourceBundle(PlatformResourceBundleLocator.java:123) - org.hibernate.validator.ValidationMessages found.
+2020-09-21 12:04:27.272 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:131) - com.mysql.jdbc.JDBC42PreparedStatement@349b4250:  SELECT 
+	c.id 'id_curso',
+	c.curso 'curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.id 'id_profesor',
+	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'
+	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = 2;
+2020-09-21 12:05:04.912 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Uraga against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.Size, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={groups=[Ljava.lang.Class;@77183d14, min=2, message=Debe contener entre 2 y 100 caracteres, payload=[Ljava.lang.Class;@423b36cd, max=100}, constraintType=GENERIC}.
+2020-09-21 12:05:04.914 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManager.getInitializedValidator(ConstraintValidatorManager.java:113) - Constraint validator org.hibernate.validator.internal.constraintvalidators.bv.size.SizeValidatorForCharSequence@2b8c77ed found in cache.
+2020-09-21 12:05:04.916 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Uraga against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@6a340d3e, groups=[Ljava.lang.Class;@2264890d}, constraintType=GENERIC}.
+2020-09-21 12:05:04.917 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManager.getInitializedValidator(ConstraintValidatorManager.java:113) - Constraint validator org.hibernate.validator.internal.constraintvalidators.bv.NotNullValidator@38ac7a86 found in cache.
+2020-09-21 12:05:04.917 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Uraga against constraint defined by ConstraintDescriptorImpl{annotation=org.hibernate.validator.constraints.NotBlank, payloads=[], hasComposingConstraints=false, isReportAsSingleInvalidConstraint=true, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={org.hibernate.validator.constraints.NotBlank.message}, payload=[Ljava.lang.Class;@1aa08eb5, groups=[Ljava.lang.Class;@9c03b4d}, constraintType=GENERIC}.
+2020-09-21 12:05:04.918 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManager.getInitializedValidator(ConstraintValidatorManager.java:113) - Constraint validator org.hibernate.validator.internal.constraintvalidators.hv.NotBlankValidator@303e348d found in cache.
+2020-09-21 12:05:04.919 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Ander against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@5f25a784, groups=[Ljava.lang.Class;@722ef9a}, constraintType=GENERIC}.
+2020-09-21 12:05:04.924 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManager.getInitializedValidator(ConstraintValidatorManager.java:113) - Constraint validator org.hibernate.validator.internal.constraintvalidators.bv.NotNullValidator@38ac7a86 found in cache.
+2020-09-21 12:05:04.925 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Ander against constraint defined by ConstraintDescriptorImpl{annotation=org.hibernate.validator.constraints.NotBlank, payloads=[], hasComposingConstraints=false, isReportAsSingleInvalidConstraint=true, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={org.hibernate.validator.constraints.NotBlank.message}, payload=[Ljava.lang.Class;@1aa08eb5, groups=[Ljava.lang.Class;@9c03b4d}, constraintType=GENERIC}.
+2020-09-21 12:05:04.926 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManager.getInitializedValidator(ConstraintValidatorManager.java:113) - Constraint validator org.hibernate.validator.internal.constraintvalidators.hv.NotBlankValidator@303e348d found in cache.
+2020-09-21 12:05:04.927 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Ander against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.Size, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={groups=[Ljava.lang.Class;@77183d14, min=2, message=Debe contener entre 2 y 100 caracteres, payload=[Ljava.lang.Class;@423b36cd, max=100}, constraintType=GENERIC}.
+2020-09-21 12:05:04.928 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManager.getInitializedValidator(ConstraintValidatorManager.java:113) - Constraint validator org.hibernate.validator.internal.constraintvalidators.bv.size.SizeValidatorForCharSequence@2b8c77ed found in cache.
+2020-09-21 12:05:04.929 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value e10adc3949ba59abbe56e057f20f883e against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@2fc8c8cc, groups=[Ljava.lang.Class;@58ee2d9f}, constraintType=GENERIC}.
+2020-09-21 12:05:04.929 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManager.getInitializedValidator(ConstraintValidatorManager.java:113) - Constraint validator org.hibernate.validator.internal.constraintvalidators.bv.NotNullValidator@38ac7a86 found in cache.
+2020-09-21 12:05:04.929 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value e10adc3949ba59abbe56e057f20f883e against constraint defined by ConstraintDescriptorImpl{annotation=org.hibernate.validator.constraints.NotBlank, payloads=[], hasComposingConstraints=false, isReportAsSingleInvalidConstraint=true, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={org.hibernate.validator.constraints.NotBlank.message}, payload=[Ljava.lang.Class;@1aa08eb5, groups=[Ljava.lang.Class;@9c03b4d}, constraintType=GENERIC}.
+2020-09-21 12:05:04.930 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManager.getInitializedValidator(ConstraintValidatorManager.java:113) - Constraint validator org.hibernate.validator.internal.constraintvalidators.hv.NotBlankValidator@303e348d found in cache.
+2020-09-21 12:05:04.930 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value e10adc3949ba59abbe56e057f20f883e against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.Size, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={groups=[Ljava.lang.Class;@77183d14, min=6, message=Debe contener 6 caracteres, payload=[Ljava.lang.Class;@423b36cd, max=6}, constraintType=GENERIC}.
+2020-09-21 12:05:04.931 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManager.getInitializedValidator(ConstraintValidatorManager.java:113) - Constraint validator org.hibernate.validator.internal.constraintvalidators.bv.size.SizeValidatorForCharSequence@e69b92c found in cache.
+2020-09-21 12:05:04.934 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:131) - com.mysql.jdbc.JDBC42PreparedStatement@491d25c:  SELECT 
+	c.id 'id_curso',
+	c.curso 'curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.id 'id_profesor',
+	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'
+	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = 2;
+2020-09-21 12:05:23.962 DEBUG org.hibernate.validator.internal.util.logging.LoggerFactory.make(LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-09-21 12:05:23.966 INFO  org.hibernate.validator.internal.util.Version.<clinit>(Version.java:30) - HV000001: Hibernate Validator 5.2.4.Final
+2020-09-21 12:05:23.994 DEBUG org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2020-09-21 12:05:24.014 DEBUG org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+2020-09-21 12:05:24.017 DEBUG org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+2020-09-21 12:05:24.018 DEBUG org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2020-09-21 12:05:24.018 DEBUG org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+2020-09-21 12:06:04.049 DEBUG org.hibernate.validator.internal.util.logging.LoggerFactory.make(LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-09-21 12:06:04.051 INFO  org.hibernate.validator.internal.util.Version.<clinit>(Version.java:30) - HV000001: Hibernate Validator 5.2.4.Final
+2020-09-21 12:06:04.084 DEBUG org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2020-09-21 12:06:04.101 DEBUG org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+2020-09-21 12:06:04.104 DEBUG org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+2020-09-21 12:06:04.105 DEBUG org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2020-09-21 12:06:04.106 DEBUG org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+2020-09-21 12:06:33.718 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:91) - com.mysql.jdbc.JDBC42PreparedStatement@4db65f77:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id ;
+2020-09-21 12:06:44.812 DEBUG academia.modelo.dao.impl.UsuarioDAOImpl.existe(UsuarioDAOImpl.java:51) - com.mysql.jdbc.JDBC42PreparedStatement@6140271c:  SELECT u.id , u.nombre, u.apellidos, u.rol, u.password
+ FROM usuarios u  WHERE nombre = 'Ander' AND apellidos = 'Uraga' AND password = MD5('123456');
+2020-09-21 12:06:44.823 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:131) - com.mysql.jdbc.JDBC42PreparedStatement@11170f6a:  SELECT 
+	c.id 'id_curso',
+	c.curso 'curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.id 'id_profesor',
+	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'
+	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = 2;
+2020-09-21 12:07:12.661 DEBUG org.hibernate.validator.internal.util.logging.LoggerFactory.make(LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-09-21 12:07:12.665 INFO  org.hibernate.validator.internal.util.Version.<clinit>(Version.java:30) - HV000001: Hibernate Validator 5.2.4.Final
+2020-09-21 12:07:12.711 DEBUG org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2020-09-21 12:07:12.753 DEBUG org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+2020-09-21 12:07:12.758 DEBUG org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+2020-09-21 12:07:12.760 DEBUG org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2020-09-21 12:07:12.761 DEBUG org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+2020-09-21 12:07:13.070 DEBUG org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl.parseComposingConstraints(ConstraintDescriptorImpl.java:640) - Adding composing constraint: ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@5775003f, groups=[Ljava.lang.Class;@581e53ce}, constraintType=GENERIC}.
+2020-09-21 12:07:13.080 DEBUG org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl.parseComposingConstraints(ConstraintDescriptorImpl.java:640) - Adding composing constraint: ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@5020fdf6, groups=[Ljava.lang.Class;@3b5e69b4}, constraintType=GENERIC}.
+2020-09-21 12:07:13.204 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Uraga against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.Size, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={groups=[Ljava.lang.Class;@4bcf77c7, min=2, message=Debe contener entre 2 y 100 caracteres, payload=[Ljava.lang.Class;@913ef43, max=100}, constraintType=GENERIC}.
+2020-09-21 12:07:13.219 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Ander against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.Size, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={groups=[Ljava.lang.Class;@4bcf77c7, min=2, message=Debe contener entre 2 y 100 caracteres, payload=[Ljava.lang.Class;@913ef43, max=100}, constraintType=GENERIC}.
+2020-09-21 12:07:13.221 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManager.getInitializedValidator(ConstraintValidatorManager.java:113) - Constraint validator org.hibernate.validator.internal.constraintvalidators.bv.size.SizeValidatorForCharSequence@496bd4bd found in cache.
+2020-09-21 12:07:13.230 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Ander against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@5775003f, groups=[Ljava.lang.Class;@581e53ce}, constraintType=GENERIC}.
+2020-09-21 12:07:13.237 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Ander against constraint defined by ConstraintDescriptorImpl{annotation=org.hibernate.validator.constraints.NotBlank, payloads=[], hasComposingConstraints=false, isReportAsSingleInvalidConstraint=true, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={org.hibernate.validator.constraints.NotBlank.message}, payload=[Ljava.lang.Class;@27b913db, groups=[Ljava.lang.Class;@717d3447}, constraintType=GENERIC}.
+2020-09-21 12:07:13.239 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Uraga against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.NotNull, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={javax.validation.constraints.NotNull.message}, payload=[Ljava.lang.Class;@5020fdf6, groups=[Ljava.lang.Class;@3b5e69b4}, constraintType=GENERIC}.
+2020-09-21 12:07:13.241 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManager.getInitializedValidator(ConstraintValidatorManager.java:113) - Constraint validator org.hibernate.validator.internal.constraintvalidators.bv.NotNullValidator@6288f30e found in cache.
+2020-09-21 12:07:13.241 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value Uraga against constraint defined by ConstraintDescriptorImpl{annotation=org.hibernate.validator.constraints.NotBlank, payloads=[], hasComposingConstraints=false, isReportAsSingleInvalidConstraint=true, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={message={org.hibernate.validator.constraints.NotBlank.message}, payload=[Ljava.lang.Class;@27b913db, groups=[Ljava.lang.Class;@717d3447}, constraintType=GENERIC}.
+2020-09-21 12:07:13.242 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManager.getInitializedValidator(ConstraintValidatorManager.java:113) - Constraint validator org.hibernate.validator.internal.constraintvalidators.hv.NotBlankValidator@29fec7ea found in cache.
+2020-09-21 12:07:13.248 DEBUG academia.modelo.dao.impl.CursoDAOImpl.insert(CursoDAOImpl.java:244) - com.mysql.jdbc.JDBC42PreparedStatement@453cb2ec: INSERT INTO cursos (curso, identificador, horas, idProfesor ) VALUES ('bla bla bla', '123', 123, 2);
+2020-09-21 12:07:13.278 ERROR academia.modelo.dao.impl.CursoDAOImpl.insert(CursoDAOImpl.java:261) - java.sql.SQLException: Generated keys not requested. You need to specify Statement.RETURN_GENERATED_KEYS to Statement.executeUpdate(), Statement.executeLargeUpdate() or Connection.prepareStatement().
+2020-09-21 12:07:13.282 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:131) - com.mysql.jdbc.JDBC42PreparedStatement@73bc2fdc:  SELECT 
+	c.id 'id_curso',
+	c.curso 'curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.id 'id_profesor',
+	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'
+	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = 2;
+2020-09-21 12:07:21.052 DEBUG academia.modelo.dao.impl.CursoDAOImpl.getById(CursoDAOImpl.java:205) - com.mysql.jdbc.JDBC42PreparedStatement@80597d6: 	SELECT
+	id 'id_curso', 
+	curso 'nombre_curso',
+	identificador,
+	horas, 
+	idProfesor 
+	FROM cursos  WHERE id =4 AND idProfesor = 2; 
+2020-09-21 12:07:21.066 DEBUG academia.modelo.dao.impl.CursoDAOImpl.delete(CursoDAOImpl.java:298) - com.mysql.jdbc.JDBC42PreparedStatement@49389ded: DELETE FROM cursos WHERE id = 4 AND idProfesor = 2 ;
+2020-09-21 12:07:21.073 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:131) - com.mysql.jdbc.JDBC42PreparedStatement@783b9358:  SELECT 
+	c.id 'id_curso',
+	c.curso 'curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.id 'id_profesor',
+	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'
+	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = 2;
+2020-09-21 12:07:24.099 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:91) - com.mysql.jdbc.JDBC42PreparedStatement@19b40a67:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id ;
+2020-09-21 12:07:26.681 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:91) - com.mysql.jdbc.JDBC42PreparedStatement@3e268f80:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id ;
+2020-09-21 12:07:38.437 DEBUG academia.modelo.dao.impl.UsuarioDAOImpl.existe(UsuarioDAOImpl.java:51) - com.mysql.jdbc.JDBC42PreparedStatement@491063a2:  SELECT u.id , u.nombre, u.apellidos, u.rol, u.password
+ FROM usuarios u  WHERE nombre = 'Elier' AND apellidos = 'Otero' AND password = MD5('123456');
+2020-09-21 12:07:38.444 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByAlumno(CursoDAOImpl.java:165) - com.mysql.jdbc.JDBC42PreparedStatement@3f015e6e: 	SELECT
+	c.id 'id_curso',
+	c.curso 'nombre_curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.nombre 'nombre_profesor',
+	u.apellidos 'apellido_profesor'
+	FROM alumnosCurso ac , usuarios u , cursos c 
+	WHERE ac.idCurso = c.id AND c.idProfesor = u.id AND ac.idAlumno = 4 ;
+2020-09-21 12:07:38.455 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:91) - com.mysql.jdbc.JDBC42PreparedStatement@5b159c1c:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id ;
+2020-09-21 12:07:46.520 DEBUG academia.modelo.dao.impl.CursoDAOImpl.insertByAlumno(CursoDAOImpl.java:279) - com.mysql.jdbc.JDBC42PreparedStatement@142a65d3:  INSERT INTO alumnosCurso (idAlumno, idCurso) VALUES (4 , 1);
+2020-09-21 12:07:46.524 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByAlumno(CursoDAOImpl.java:165) - com.mysql.jdbc.JDBC42PreparedStatement@5f0152a2: 	SELECT
+	c.id 'id_curso',
+	c.curso 'nombre_curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.nombre 'nombre_profesor',
+	u.apellidos 'apellido_profesor'
+	FROM alumnosCurso ac , usuarios u , cursos c 
+	WHERE ac.idCurso = c.id AND c.idProfesor = u.id AND ac.idAlumno = 4 ;
+2020-09-21 12:07:46.535 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:91) - com.mysql.jdbc.JDBC42PreparedStatement@3107067d:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id ;
+2020-09-21 12:07:52.236 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:91) - com.mysql.jdbc.JDBC42PreparedStatement@26dfcaff:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id ;
+2020-09-21 12:07:54.073 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByAlumno(CursoDAOImpl.java:165) - com.mysql.jdbc.JDBC42PreparedStatement@1ee4fa49: 	SELECT
+	c.id 'id_curso',
+	c.curso 'nombre_curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.nombre 'nombre_profesor',
+	u.apellidos 'apellido_profesor'
+	FROM alumnosCurso ac , usuarios u , cursos c 
+	WHERE ac.idCurso = c.id AND c.idProfesor = u.id AND ac.idAlumno = 4 ;
+2020-09-21 12:07:54.081 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:91) - com.mysql.jdbc.JDBC42PreparedStatement@2443256d:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id ;
+2020-09-21 12:07:55.353 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:91) - com.mysql.jdbc.JDBC42PreparedStatement@76c80376:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id ;

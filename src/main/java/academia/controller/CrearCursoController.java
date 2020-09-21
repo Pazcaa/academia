@@ -1,12 +1,18 @@
 package academia.controller;
 
 import java.io.IOException;
+import java.util.Set;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
 
 import org.apache.log4j.Logger;
 
@@ -22,6 +28,8 @@ public class CrearCursoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final static Logger LOG = Logger.getLogger(CrearCursoController.class);
 	private static CursoDAOImpl daoCurso = CursoDAOImpl.getInstance();
+	private static ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+	private static Validator validator = factory.getValidator();
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -48,19 +56,38 @@ public class CrearCursoController extends HttpServlet {
 		HttpSession session = request.getSession();
 		Usuario usuario = (Usuario)session.getAttribute("usuario_login");
 		
+		Set<ConstraintViolation<Usuario>> violations = validator.validate(usuario);
+		
 		try {
 			
-			int horas = Integer.parseInt(pHoras);
-			//int idProfesor = usuario.getId();
+			if (violations.isEmpty()) { //si no hay problemas de validación
 			
-			curso.setNombre(pCurso);
-			curso.setIdentificador(pIdentificador);
-			curso.setHoras(horas);
-			curso.setProfesor(usuario);
+				
+				int horas = Integer.parseInt(pHoras);
+				//int idProfesor = usuario.getId();
+				
+				curso.setNombre(pCurso);
+				curso.setIdentificador(pIdentificador);
+				curso.setHoras(horas);
+				curso.setProfesor(usuario);
+				
+				daoCurso.insert(curso);
+				
+				mensaje = "Su nuevo curso ha sido agregado con exito";
+				
+			}else { //si hay errores de validacion, me los muestra en el mensaje
+				
+				String error = "";
+				
+				for (ConstraintViolation<Usuario> cViolation : violations) {
+					
+					error += "<p>" + cViolation.getPropertyPath() + ": " + cViolation.getMessage() +  "</p>";
+				}
+				
+				mensaje = "Lo sentimos, pero sus datos son incorrectos" + error;
+				
+			}
 			
-			daoCurso.insert(curso);
-			
-			mensaje = "Su nuevo curso ha sido agregado con exito";
 			
 		} catch (Exception e) {
 			LOG.error(e);
