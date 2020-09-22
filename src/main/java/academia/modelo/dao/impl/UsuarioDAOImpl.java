@@ -32,8 +32,10 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 
 	// executeQUery => ResultSet
 	private final static String SQL_EXISTE  = " SELECT u.id , u.nombre, u.apellidos, u.rol, u.password\n" + 
-											" FROM usuarios u " +
-											" WHERE nombre = ? AND apellidos = ? AND password = MD5(?);";
+											" 	FROM usuarios u " +
+											" 	WHERE nombre = ? AND apellidos = ? AND password = MD5(?) \n" +
+											"   ORDER BY u.id ASC \n" + 
+											" 	LIMIT 500 ;";
 	
 
 	@Override

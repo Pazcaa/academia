@@ -10,7 +10,7 @@
 
 <h1>Bienvenido PROFESOR</h1>
 
-
+${cursosAlumnos }
 
 <p>${mensaje}</p>
 

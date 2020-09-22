@@ -3,6 +3,7 @@ package academia.modelo.dao.impl;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
@@ -35,42 +36,72 @@ public class CursoDAOImpl implements CursoDAO {
 
 	private final static String SQL_LISTAR = " SELECT \n" + 
 											"	c.id 'curso_id',\n" + 
-											"	c.identificador, \n" + 
+											"	c.identificador 'identificador', \n" + 
 											"	c.curso 'curso_nombre',\n" + 
-											"	c.horas,\n" + 
-											"	p.id 'profesor_id',\n" + 
-											"	p.nombre 'profesor_nombre',\n" + 
-											"	p.apellidos 'profesor_apellido',\n" + 
+											"	c.horas 'horas',\n" + 
+											"	p.id 'usuario_id',\n" + 
+											"	p.nombre 'usuario_nombre',\n" + 
+											"	p.apellidos 'usuario_apellidos',\n" + 
 											"	rol \n" + 
 											"	FROM cursos c, usuarios p \n" + 
-											"	WHERE c.idProfesor = p.id ;";
+											"	WHERE c.idProfesor = p.id \n" +
+											"   ORDER BY c.id ASC \n" + 
+											" 	LIMIT 500 ;";
 	
 	private final static String SQL_CURSOS_PROFESOR = " SELECT \n" + 
-													"	c.id 'id_curso',\n" + 
-													"	c.curso 'curso',\n" + 
+													"	c.id 'curso_id',\n" + 
+													"	c.curso 'curso_nombre',\n" + 
 													"	c.identificador 'identificador',\n" + 
 													"	c.horas 'horas',\n" + 
-													"	u.id 'id_profesor',\n" + 
-													"	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'\n" + 
-													"	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = ?;";
+													"	u.id 'usuario_id',\n" + 
+													"	u.nombre 'usuario_nombre',\n" + 
+													"	u.apellidos 'usuario_apellidos',\n" + 
+													"	rol \n" + 
+													"	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = ? \n" + 
+													"   ORDER BY c.id ASC \n" +
+													" 	LIMIT 500 ;";
 	
 	private final static String SQL_CURSOS_ALUMNO = "	SELECT\n" + 
-													"	c.id 'id_curso',\n" + 
-													"	c.curso 'nombre_curso',\n" + 
+													"	c.id 'curso_id',\n" + 
+													"	c.curso 'curso_nombre',\n" + 
 													"	c.identificador 'identificador',\n" + 
 													"	c.horas 'horas',\n" + 
-													"	u.nombre 'nombre_profesor',\n" +
-													"	u.apellidos 'apellido_profesor'\n" +
+													"	u.id 'usuario_id',\n" + 
+													"	u.nombre 'usuario_nombre',\n" +
+													"	u.apellidos 'usuario_apellidos',\n" +
+													"	rol \n" + 
 													"	FROM alumnosCurso ac , usuarios u , cursos c \n" + 
-													"	WHERE ac.idCurso = c.id AND c.idProfesor = u.id AND ac.idAlumno = ? ;";
+													"	WHERE ac.idCurso = c.id AND c.idProfesor = u.id AND ac.idAlumno = ? \n" +
+													"   ORDER BY c.id ASC \n" + 
+													" 	LIMIT 500 ;";
 	
 	private final static String SQL_CURSO_BY_ID = "	SELECT\n" + 
-												"	id 'id_curso', \n" + 
-												"	curso 'nombre_curso',\n" + 
-												"	identificador,\n" + 
-												"	horas, \n" + 
-												"	idProfesor \n" + 
-												"	FROM cursos  WHERE id =? AND idProfesor = ?; ";
+												"	c.id 'curso_id', \n" + 
+												"	c.curso 'curso_nombre',\n" + 
+												"	c.identificador 'identificador',\n" + 
+												"	c.horas 'horas',\n" + 
+												"	u.id 'usuario_id',\n" + 
+												"	u.nombre 'usuario_nombre',\n" +
+												"	u.apellidos 'usuario_apellidos',\n" +
+												"	rol \n" + 
+												"	FROM cursos c, usuarios u  WHERE c.id =? AND u.id = ? \n " +
+												"   ORDER BY c.id ASC \n" + 
+												" 	LIMIT 500 ;";
+	
+	private final static String SQL_CURSOS_PROFESOR_NUM_ALUMNOS = "	SELECT \n" + 
+																"	c.id 'curso_id',\n" + 
+																"	c.curso 'curso_nombre',\n" + 
+																"	c.identificador 'identificador',\n" + 
+																"	c.horas 'horas',\n" + 
+																"	u.id 'usuario_id',\n" + 
+																"	u.nombre 'usuario_nombre',\n" + 
+																"	u.apellidos 'usuario_apellidos',\n" + 
+																"	rol \n" + 
+																"	FROM cursos c , usuarios u , alumnosCurso ac \n" + 
+																"	WHERE c.idProfesor = u.id AND c.id = ac.idCurso AND u.id = ? \n" + 
+																"	GROUP BY c.id \n" + 
+																"	ORDER BY c.id ASC \n" + 
+																"	LIMIT 500;";
 	
 	private final static String SQL_INSERT_CURSO = "INSERT INTO cursos (curso, identificador, horas, idProfesor ) VALUES (?, ?, ?, ?);";
 	
@@ -91,21 +122,8 @@ public class CursoDAOImpl implements CursoDAO {
 			LOG.debug(pst);
 			
 			while (rs.next()) {
-				Curso c = new Curso();
-				c.setId(rs.getInt("curso_id"));
-				c.setIdentificador(rs.getString("c.identificador"));
-				c.setNombre(rs.getString("curso_nombre"));
-				c.setHoras(rs.getInt("c.horas"));
 				
-				Usuario p = new Usuario();
-				p.setId(rs.getInt("profesor_id"));
-				p.setNombre(rs.getString("profesor_nombre"));
-				p.setApellidos(rs.getString("profesor_apellido"));
-				p.setRol(rs.getInt("rol"));
-				
-				c.setProfesor(p);
-				
-				cursos.add(c);
+				cursos.add(mappers(rs));
 			}
 			
 		} catch (Exception e) {
@@ -134,13 +152,7 @@ public class CursoDAOImpl implements CursoDAO {
 					) {
 				while (rs.next()) {
 					
-					Curso curso = new Curso();
-					curso.setId(rs.getInt("id_curso"));
-					curso.setNombre(rs.getString("curso"));
-					curso.setIdentificador(rs.getString("identificador"));
-					curso.setHoras(rs.getInt("horas"));
-					
-					cursos.add(curso);
+					cursos.add(mappers(rs));
 					
 				}
 			} 
@@ -168,21 +180,36 @@ public class CursoDAOImpl implements CursoDAO {
 					) {
 				while (rs.next()) {
 					
-					Curso curso = new Curso();
-					curso.setId(rs.getInt("id_curso"));
-					curso.setNombre(rs.getString("nombre_curso"));
-					curso.setIdentificador(rs.getString("identificador"));
-					curso.setHoras(rs.getInt("horas"));
-					
-					Usuario p = new Usuario();
-					p.setNombre(rs.getString("nombre_profesor"));
-					p.setApellidos(rs.getString("apellido_profesor"));
-					
-					curso.setProfesor(p);
-					
-					cursos.add(curso);
+					cursos.add(mappers(rs));
 					
 				}
+			} 
+			
+		} catch (Exception e) {
+			LOG.error(e);
+		}
+		
+		return cursos;
+	}
+	
+	@Override
+	public ArrayList<Curso> listarCursosconAlumnos(int id_usuario) {
+		ArrayList<Curso> cursos = new ArrayList<Curso>();
+		
+		try (Connection con = ConnectionManager.getConnection();
+				PreparedStatement pst = con.prepareStatement(SQL_CURSOS_PROFESOR_NUM_ALUMNOS);
+				){
+			
+			pst.setInt(1, id_usuario);
+			LOG.debug(pst);
+			
+			try (ResultSet rs = pst.executeQuery();
+					){
+				while (rs.next()) {
+					
+					cursos.add(mappers(rs));
+				}
+				
 			} 
 			
 		} catch (Exception e) {
@@ -204,26 +231,17 @@ public class CursoDAOImpl implements CursoDAO {
 			
 			LOG.debug(pst);
 			
-			try (ResultSet rs = pst.executeQuery();) {
+			ResultSet rs = pst.executeQuery();
 				if (rs.next()) {
 					
-					curso.setId(rs.getInt("id_curso"));
-					curso.setNombre(rs.getString("nombre_curso"));
-					curso.setIdentificador(rs.getString("identificador"));
-					curso.setHoras(rs.getInt("horas"));
-					
-					
-					Usuario profesor = new Usuario();
-					profesor.setId(rs.getInt("idProfesor"));
-					
-					curso.setProfesor(profesor);
+					curso = mappers(rs);
 					
 				}else {
 					throw new Exception();
 					
 				}
 			
-		}
+		
 		}
 		
 		return curso;
@@ -302,6 +320,27 @@ public class CursoDAOImpl implements CursoDAO {
 		return curso;
 	}
 
+	
+	private Curso mappers(ResultSet rs) throws SQLException {
+		
+		Curso curso = new Curso();
+		Usuario profesor = new Usuario();
+		
+		curso.setId(rs.getInt("curso_id"));
+		curso.setNombre(rs.getString("curso_nombre"));
+		curso.setIdentificador(rs.getString("identificador"));
+		curso.setHoras(rs.getInt("horas"));
+	
+		profesor.setId(rs.getInt("usuario_id"));
+		profesor.setNombre(rs.getString("usuario_nombre"));
+		profesor.setApellidos(rs.getString("usuario_apellidos"));
+		profesor.setRol(rs.getInt("rol"));
+		
+		
+		curso.setProfesor(profesor);
+	
+		return curso;
+	}
 	
 
 	

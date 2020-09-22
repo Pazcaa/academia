@@ -6,6 +6,7 @@ import academia.modelo.pojo.Curso;
 
 public interface CursoDAO {
 
+	
 	ArrayList<Curso> listar();
 	
 	/**
@@ -23,6 +24,15 @@ public interface CursoDAO {
 	 */
 	
 	ArrayList<Curso> cursosByAlumno (int id_usuario);
+	
+	/**
+	 * Entrega un listado de los cursos de cada profesor, incluyendo el numero de alumno inscritos en cada uno de los cursos
+	 * @param id_usuario = id del profesor
+	 * @return
+	 */
+	ArrayList<Curso> listarCursosconAlumnos (int id_usuario);
+	
+	
 	
 	Curso insert(Curso pojo) throws Exception;
 	
