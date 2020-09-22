@@ -1271,3 +1271,475 @@
 	rol 
 	FROM cursos c, usuarios p 
 	WHERE c.idProfesor = p.id ;
+2020-09-22 09:05:19.331 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:99) - com.mysql.jdbc.JDBC42PreparedStatement@46d38abb:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:05:34.905 DEBUG academia.modelo.dao.impl.UsuarioDAOImpl.existe(UsuarioDAOImpl.java:53) - com.mysql.jdbc.JDBC42PreparedStatement@85ed129:  SELECT u.id , u.nombre, u.apellidos, u.rol, u.password
+ 	FROM usuarios u  	WHERE nombre = 'Ander' AND apellidos = 'Uraga' AND password = MD5('123456') 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:05:34.929 ERROR academia.modelo.dao.impl.UsuarioDAOImpl.existe(UsuarioDAOImpl.java:67) - com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'c.id' in 'order clause'
+2020-09-22 09:05:43.179 DEBUG academia.modelo.dao.impl.UsuarioDAOImpl.existe(UsuarioDAOImpl.java:53) - com.mysql.jdbc.JDBC42PreparedStatement@24697bcb:  SELECT u.id , u.nombre, u.apellidos, u.rol, u.password
+ 	FROM usuarios u  	WHERE nombre = 'Ander' AND apellidos = 'Uraga' AND password = MD5('123456') 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:05:43.183 ERROR academia.modelo.dao.impl.UsuarioDAOImpl.existe(UsuarioDAOImpl.java:67) - com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'c.id' in 'order clause'
+2020-09-22 09:06:30.411 DEBUG academia.modelo.dao.impl.UsuarioDAOImpl.existe(UsuarioDAOImpl.java:53) - com.mysql.jdbc.JDBC42PreparedStatement@2447cee0:  SELECT u.id , u.nombre, u.apellidos, u.rol, u.password
+ 	FROM usuarios u  	WHERE nombre = 'Ander' AND apellidos = 'Uraga' AND password = MD5('123456') 
+   ORDER BY u.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:06:30.448 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:139) - com.mysql.jdbc.JDBC42PreparedStatement@663a9519:  SELECT 
+	c.id 'id_curso',
+	c.curso 'curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.id 'id_profesor',
+	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'
+	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = 2 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:06:51.562 DEBUG org.hibernate.validator.internal.util.logging.LoggerFactory.make(LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-09-22 09:06:51.565 INFO  org.hibernate.validator.internal.util.Version.<clinit>(Version.java:30) - HV000001: Hibernate Validator 5.2.4.Final
+2020-09-22 09:06:51.630 DEBUG org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2020-09-22 09:06:51.670 DEBUG org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+2020-09-22 09:06:51.680 DEBUG org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+2020-09-22 09:06:51.681 DEBUG org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2020-09-22 09:06:51.685 DEBUG org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+2020-09-22 09:06:52.106 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value bs35 against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.Size, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={groups=[Ljava.lang.Class;@682097e, min=0, message={javax.validation.constraints.Size.message}, payload=[Ljava.lang.Class;@3cfc5bc9, max=4}, constraintType=GENERIC}.
+2020-09-22 09:06:52.123 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value bootstrap against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.Size, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={groups=[Ljava.lang.Class;@682097e, min=2, message=Debe contener entre 2 y 100 caracteres, payload=[Ljava.lang.Class;@3cfc5bc9, max=100}, constraintType=GENERIC}.
+2020-09-22 09:06:52.136 DEBUG academia.modelo.dao.impl.CursoDAOImpl.insert(CursoDAOImpl.java:252) - com.mysql.jdbc.JDBC42PreparedStatement@5736893f: INSERT INTO cursos (curso, identificador, horas, idProfesor ) VALUES ('bootstrap', 'bs35', 35, 2);
+2020-09-22 09:06:52.186 ERROR academia.modelo.dao.impl.CursoDAOImpl.insert(CursoDAOImpl.java:269) - java.sql.SQLException: Generated keys not requested. You need to specify Statement.RETURN_GENERATED_KEYS to Statement.executeUpdate(), Statement.executeLargeUpdate() or Connection.prepareStatement().
+2020-09-22 09:06:52.188 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:139) - com.mysql.jdbc.JDBC42PreparedStatement@3f155a29:  SELECT 
+	c.id 'id_curso',
+	c.curso 'curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.id 'id_profesor',
+	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'
+	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = 2 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:07:00.910 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:99) - com.mysql.jdbc.JDBC42PreparedStatement@3ad7cdf4:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:07:04.345 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:139) - com.mysql.jdbc.JDBC42PreparedStatement@4665f026:  SELECT 
+	c.id 'id_curso',
+	c.curso 'curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.id 'id_profesor',
+	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'
+	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = 2 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:07:05.975 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:99) - com.mysql.jdbc.JDBC42PreparedStatement@3c55309d:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:07:17.090 DEBUG academia.modelo.dao.impl.UsuarioDAOImpl.existe(UsuarioDAOImpl.java:53) - com.mysql.jdbc.JDBC42PreparedStatement@3b0fbabe:  SELECT u.id , u.nombre, u.apellidos, u.rol, u.password
+ 	FROM usuarios u  	WHERE nombre = 'Elier' AND apellidos = 'Otero' AND password = MD5('123456') 
+   ORDER BY u.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:07:17.104 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByAlumno(CursoDAOImpl.java:173) - com.mysql.jdbc.JDBC42PreparedStatement@71fbe415: 	SELECT
+	c.id 'id_curso',
+	c.curso 'nombre_curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.nombre 'nombre_profesor',
+	u.apellidos 'apellido_profesor'
+	FROM alumnosCurso ac , usuarios u , cursos c 
+	WHERE ac.idCurso = c.id AND c.idProfesor = u.id AND ac.idAlumno = 4 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:07:17.118 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:99) - com.mysql.jdbc.JDBC42PreparedStatement@9a52680:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:07:26.624 DEBUG academia.modelo.dao.impl.CursoDAOImpl.insertByAlumno(CursoDAOImpl.java:287) - com.mysql.jdbc.JDBC42PreparedStatement@3c459084:  INSERT INTO alumnosCurso (idAlumno, idCurso) VALUES (4 , 6);
+2020-09-22 09:07:26.632 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByAlumno(CursoDAOImpl.java:173) - com.mysql.jdbc.JDBC42PreparedStatement@7d789abf: 	SELECT
+	c.id 'id_curso',
+	c.curso 'nombre_curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.nombre 'nombre_profesor',
+	u.apellidos 'apellido_profesor'
+	FROM alumnosCurso ac , usuarios u , cursos c 
+	WHERE ac.idCurso = c.id AND c.idProfesor = u.id AND ac.idAlumno = 4 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:07:26.644 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:99) - com.mysql.jdbc.JDBC42PreparedStatement@4ccf605b:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:07:32.286 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:99) - com.mysql.jdbc.JDBC42PreparedStatement@feced3e:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:07:34.683 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByAlumno(CursoDAOImpl.java:173) - com.mysql.jdbc.JDBC42PreparedStatement@53bf56dc: 	SELECT
+	c.id 'id_curso',
+	c.curso 'nombre_curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.nombre 'nombre_profesor',
+	u.apellidos 'apellido_profesor'
+	FROM alumnosCurso ac , usuarios u , cursos c 
+	WHERE ac.idCurso = c.id AND c.idProfesor = u.id AND ac.idAlumno = 4 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:07:34.694 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:99) - com.mysql.jdbc.JDBC42PreparedStatement@235a2b2a:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:07:36.973 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:99) - com.mysql.jdbc.JDBC42PreparedStatement@23b8d689:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:25:17.728 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-22 09:25:22.313 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:99) - com.mysql.jdbc.JDBC42PreparedStatement@1e166b12:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:26:01.658 DEBUG academia.modelo.dao.impl.UsuarioDAOImpl.existe(UsuarioDAOImpl.java:53) - com.mysql.jdbc.JDBC42PreparedStatement@5dd0a28e:  SELECT u.id , u.nombre, u.apellidos, u.rol, u.password
+ 	FROM usuarios u  	WHERE nombre = 'Ander' AND apellidos = 'Uraga' AND password = MD5('123456') 
+   ORDER BY u.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:26:01.686 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:139) - com.mysql.jdbc.JDBC42PreparedStatement@2d3bb6ea:  SELECT 
+	c.id 'id_curso',
+	c.curso 'curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.id 'id_profesor',
+	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'
+	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = 2 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:26:01.696 TRACE seguridad.SeguridadFilter.doFilter(SeguridadFilter.java:54) - filtrando URI:/academia/privado/profesor.jsp
+2020-09-22 09:26:05.599 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:99) - com.mysql.jdbc.JDBC42PreparedStatement@649ca1d:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:26:07.467 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:139) - com.mysql.jdbc.JDBC42PreparedStatement@5d7e5e36:  SELECT 
+	c.id 'id_curso',
+	c.curso 'curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.id 'id_profesor',
+	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'
+	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = 2 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:26:07.471 TRACE seguridad.SeguridadFilter.doFilter(SeguridadFilter.java:54) - filtrando URI:/academia/privado/profesor.jsp
+2020-09-22 09:26:35.290 DEBUG org.hibernate.validator.internal.util.logging.LoggerFactory.make(LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-09-22 09:26:35.292 INFO  org.hibernate.validator.internal.util.Version.<clinit>(Version.java:30) - HV000001: Hibernate Validator 5.2.4.Final
+2020-09-22 09:26:35.353 DEBUG org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2020-09-22 09:26:35.392 DEBUG org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+2020-09-22 09:26:35.402 DEBUG org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+2020-09-22 09:26:35.405 DEBUG org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2020-09-22 09:26:35.406 DEBUG org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+2020-09-22 09:26:35.790 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value  MS45 against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.Size, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={groups=[Ljava.lang.Class;@3bffed93, min=0, message={javax.validation.constraints.Size.message}, payload=[Ljava.lang.Class;@3ebbc115, max=4}, constraintType=GENERIC}.
+2020-09-22 09:26:35.815 TRACE org.hibernate.validator.resourceloading.PlatformResourceBundleLocator.loadBundle(PlatformResourceBundleLocator.java:151) - ValidationMessages not found by thread context classloader
+2020-09-22 09:26:35.816 TRACE org.hibernate.validator.resourceloading.PlatformResourceBundleLocator.loadBundle(PlatformResourceBundleLocator.java:151) - ValidationMessages not found by validator classloader
+2020-09-22 09:26:35.816 DEBUG org.hibernate.validator.resourceloading.PlatformResourceBundleLocator.getResourceBundle(PlatformResourceBundleLocator.java:126) - ValidationMessages not found.
+2020-09-22 09:26:35.822 TRACE org.hibernate.validator.resourceloading.PlatformResourceBundleLocator.loadBundle(PlatformResourceBundleLocator.java:151) - ContributorValidationMessages not found by thread context classloader
+2020-09-22 09:26:35.823 TRACE org.hibernate.validator.resourceloading.PlatformResourceBundleLocator.loadBundle(PlatformResourceBundleLocator.java:151) - ContributorValidationMessages not found by validator classloader
+2020-09-22 09:26:35.824 DEBUG org.hibernate.validator.resourceloading.PlatformResourceBundleLocator.getResourceBundle(PlatformResourceBundleLocator.java:126) - ContributorValidationMessages not found.
+2020-09-22 09:26:35.828 DEBUG org.hibernate.validator.resourceloading.PlatformResourceBundleLocator.getResourceBundle(PlatformResourceBundleLocator.java:123) - org.hibernate.validator.ValidationMessages found.
+2020-09-22 09:26:35.854 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value  MySQL against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.Size, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={groups=[Ljava.lang.Class;@3bffed93, min=2, message=Debe contener entre 2 y 100 caracteres, payload=[Ljava.lang.Class;@3ebbc115, max=100}, constraintType=GENERIC}.
+2020-09-22 09:26:35.859 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:139) - com.mysql.jdbc.JDBC42PreparedStatement@bcf409a:  SELECT 
+	c.id 'id_curso',
+	c.curso 'curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.id 'id_profesor',
+	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'
+	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = 2 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:26:35.862 TRACE seguridad.SeguridadFilter.doFilter(SeguridadFilter.java:54) - filtrando URI:/academia/privado/profesor.jsp
+2020-09-22 09:27:09.553 ERROR academia.controller.CrearCursoController.doPost(CrearCursoController.java:96) - java.lang.NumberFormatException: For input string: " 450"
+2020-09-22 09:27:09.565 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:139) - com.mysql.jdbc.JDBC42PreparedStatement@38a3688:  SELECT 
+	c.id 'id_curso',
+	c.curso 'curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.id 'id_profesor',
+	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'
+	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = 2 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:27:09.573 TRACE seguridad.SeguridadFilter.doFilter(SeguridadFilter.java:54) - filtrando URI:/academia/privado/profesor.jsp
+2020-09-22 09:27:24.264 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:139) - com.mysql.jdbc.JDBC42PreparedStatement@7b273917:  SELECT 
+	c.id 'id_curso',
+	c.curso 'curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.id 'id_profesor',
+	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'
+	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = 2 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:27:24.267 TRACE seguridad.SeguridadFilter.doFilter(SeguridadFilter.java:54) - filtrando URI:/academia/privado/profesor.jsp
+2020-09-22 09:27:46.490 ERROR academia.controller.CrearCursoController.doPost(CrearCursoController.java:96) - java.lang.NumberFormatException: For input string: " 234"
+2020-09-22 09:27:46.495 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:139) - com.mysql.jdbc.JDBC42PreparedStatement@318920f1:  SELECT 
+	c.id 'id_curso',
+	c.curso 'curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.id 'id_profesor',
+	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'
+	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = 2 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:27:46.505 TRACE seguridad.SeguridadFilter.doFilter(SeguridadFilter.java:54) - filtrando URI:/academia/privado/profesor.jsp
+2020-09-22 09:28:48.471 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value MS45 against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.Size, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={groups=[Ljava.lang.Class;@3bffed93, min=0, message={javax.validation.constraints.Size.message}, payload=[Ljava.lang.Class;@3ebbc115, max=4}, constraintType=GENERIC}.
+2020-09-22 09:28:48.473 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManager.getInitializedValidator(ConstraintValidatorManager.java:113) - Constraint validator org.hibernate.validator.internal.constraintvalidators.bv.size.SizeValidatorForCharSequence@66ac6a9d found in cache.
+2020-09-22 09:28:48.482 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:108) - Validating value MySQL against constraint defined by ConstraintDescriptorImpl{annotation=javax.validation.constraints.Size, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, elementType=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface javax.validation.groups.Default], attributes={groups=[Ljava.lang.Class;@3bffed93, min=2, message=Debe contener entre 2 y 100 caracteres, payload=[Ljava.lang.Class;@3ebbc115, max=100}, constraintType=GENERIC}.
+2020-09-22 09:28:48.484 TRACE org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManager.getInitializedValidator(ConstraintValidatorManager.java:113) - Constraint validator org.hibernate.validator.internal.constraintvalidators.bv.size.SizeValidatorForCharSequence@5d4bb83c found in cache.
+2020-09-22 09:28:48.492 DEBUG academia.modelo.dao.impl.CursoDAOImpl.insert(CursoDAOImpl.java:252) - com.mysql.jdbc.JDBC42PreparedStatement@2315648b: INSERT INTO cursos (curso, identificador, horas, idProfesor ) VALUES ('MySQL', 'MS45', 450, 2);
+2020-09-22 09:28:48.537 ERROR academia.modelo.dao.impl.CursoDAOImpl.insert(CursoDAOImpl.java:269) - java.sql.SQLException: Generated keys not requested. You need to specify Statement.RETURN_GENERATED_KEYS to Statement.executeUpdate(), Statement.executeLargeUpdate() or Connection.prepareStatement().
+2020-09-22 09:28:48.540 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:139) - com.mysql.jdbc.JDBC42PreparedStatement@7a976c19:  SELECT 
+	c.id 'id_curso',
+	c.curso 'curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.id 'id_profesor',
+	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'
+	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = 2 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:28:48.541 TRACE seguridad.SeguridadFilter.doFilter(SeguridadFilter.java:54) - filtrando URI:/academia/privado/profesor.jsp
+2020-09-22 09:28:55.865 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:99) - com.mysql.jdbc.JDBC42PreparedStatement@67b6820:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:28:58.126 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:139) - com.mysql.jdbc.JDBC42PreparedStatement@1dd7e41a:  SELECT 
+	c.id 'id_curso',
+	c.curso 'curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.id 'id_profesor',
+	CONCAT(u.nombre, ' ', u.apellidos) as 'nombre_profesor'
+	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = 2 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:28:58.130 TRACE seguridad.SeguridadFilter.doFilter(SeguridadFilter.java:54) - filtrando URI:/academia/privado/profesor.jsp
+2020-09-22 09:29:00.298 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:99) - com.mysql.jdbc.JDBC42PreparedStatement@7546653c:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:29:13.416 DEBUG academia.modelo.dao.impl.UsuarioDAOImpl.existe(UsuarioDAOImpl.java:53) - com.mysql.jdbc.JDBC42PreparedStatement@c5bf1cd:  SELECT u.id , u.nombre, u.apellidos, u.rol, u.password
+ 	FROM usuarios u  	WHERE nombre = 'Elier' AND apellidos = 'Otero' AND password = MD5('123456') 
+   ORDER BY u.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:29:13.421 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByAlumno(CursoDAOImpl.java:173) - com.mysql.jdbc.JDBC42PreparedStatement@5687b3bb: 	SELECT
+	c.id 'id_curso',
+	c.curso 'nombre_curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.nombre 'nombre_profesor',
+	u.apellidos 'apellido_profesor'
+	FROM alumnosCurso ac , usuarios u , cursos c 
+	WHERE ac.idCurso = c.id AND c.idProfesor = u.id AND ac.idAlumno = 4 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:29:13.433 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:99) - com.mysql.jdbc.JDBC42PreparedStatement@37634b56:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:29:13.434 TRACE seguridad.SeguridadFilter.doFilter(SeguridadFilter.java:54) - filtrando URI:/academia/privado/alumno.jsp
+2020-09-22 09:29:22.888 DEBUG academia.modelo.dao.impl.CursoDAOImpl.insertByAlumno(CursoDAOImpl.java:287) - com.mysql.jdbc.JDBC42PreparedStatement@44bd0217:  INSERT INTO alumnosCurso (idAlumno, idCurso) VALUES (4 , 7);
+2020-09-22 09:29:22.903 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByAlumno(CursoDAOImpl.java:173) - com.mysql.jdbc.JDBC42PreparedStatement@7f730601: 	SELECT
+	c.id 'id_curso',
+	c.curso 'nombre_curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.nombre 'nombre_profesor',
+	u.apellidos 'apellido_profesor'
+	FROM alumnosCurso ac , usuarios u , cursos c 
+	WHERE ac.idCurso = c.id AND c.idProfesor = u.id AND ac.idAlumno = 4 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:29:22.910 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:99) - com.mysql.jdbc.JDBC42PreparedStatement@664cb531:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:29:22.914 TRACE seguridad.SeguridadFilter.doFilter(SeguridadFilter.java:54) - filtrando URI:/academia/privado/alumno.jsp
+2020-09-22 09:29:26.770 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:99) - com.mysql.jdbc.JDBC42PreparedStatement@1322b058:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:29:28.385 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByAlumno(CursoDAOImpl.java:173) - com.mysql.jdbc.JDBC42PreparedStatement@642e1820: 	SELECT
+	c.id 'id_curso',
+	c.curso 'nombre_curso',
+	c.identificador 'identificador',
+	c.horas 'horas',
+	u.nombre 'nombre_profesor',
+	u.apellidos 'apellido_profesor'
+	FROM alumnosCurso ac , usuarios u , cursos c 
+	WHERE ac.idCurso = c.id AND c.idProfesor = u.id AND ac.idAlumno = 4 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:29:28.389 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:99) - com.mysql.jdbc.JDBC42PreparedStatement@1ec5531b:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
+2020-09-22 09:29:28.390 TRACE seguridad.SeguridadFilter.doFilter(SeguridadFilter.java:54) - filtrando URI:/academia/privado/alumno.jsp
+2020-09-22 09:29:31.786 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:99) - com.mysql.jdbc.JDBC42PreparedStatement@4efc2dec:  SELECT 
+	c.id 'curso_id',
+	c.identificador, 
+	c.curso 'curso_nombre',
+	c.horas,
+	p.id 'profesor_id',
+	p.nombre 'profesor_nombre',
+	p.apellidos 'profesor_apellido',
+	rol 
+	FROM cursos c, usuarios p 
+	WHERE c.idProfesor = p.id 
+   ORDER BY c.id ASC 
+ 	LIMIT 500 ;
