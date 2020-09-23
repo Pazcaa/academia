@@ -6,9 +6,11 @@
             <section class='ficha_entrada'>
                 <table  class="tabla_ipartek">
                     <thead>
-                        <th>Curso</th>
-                        <th>Profesor</th>
-                        <th>Horas</th>
+	                    <tr>
+	                        <th>Curso</th>
+	                        <th>Profesor</th>
+	                        <th>Horas</th>
+	                    </tr>
                     </thead>
                     <tbody>
                     <jsp:include page="listaCursos.jsp"/>

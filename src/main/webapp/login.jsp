@@ -28,7 +28,7 @@
 		</div>	
 		<div class="form-group">
 			<label for="password">Password</label>
-			<input type="password" class="form-control" name="password" id="password" value="" placeholder="debe contener entre 4 y 10 caracteres" required>
+			<input type="password" class="form-control" name="password" id="password" value="" placeholder="debe contener entre 4 y 10 caracteres" autofocus required>
 		</div>	
 		<div class="form-group">
 			<input type="submit" class="btn-primary" name="login" value="Iniciar Sesion">

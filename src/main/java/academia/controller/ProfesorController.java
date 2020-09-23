@@ -37,7 +37,11 @@ public class ProfesorController extends HttpServlet {
 			
 			ArrayList<Curso> cursos = daoCurso.cursosByProfesor(usuario.getId());
 			
+			ArrayList<Curso> cursosAlumnos = daoCurso.listarCursosconAlumnos(usuario.getId());
+			
 			request.setAttribute("cursos", cursos);
+			request.setAttribute("cursosAlumnos", cursosAlumnos);
+			
 			
 		} catch (Exception e) {
 			LOG.error(e);

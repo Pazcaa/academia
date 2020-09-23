@@ -33,9 +33,31 @@ public class CursoDAOImpl implements CursoDAO {
 		
 		return INSTANCE;	
 	}
+	
+	private final static String CONSULTA = "	SELECT \n" + 
+											"	c.id 'curso_id', \n" + 
+											"	c.curso 'curso_nombre',	\n" + 
+											"	c.identificador 'identificador', \n" + 
+											"	c.horas 'horas', \n" + 
+											"	u.id 'usuario_id', \n" + 
+											"	u.nombre 'usuario_nombre', \n" + 
+											"	u.apellidos 'usuario_apellidos', \n" + 
+											"	rol, \n" + 
+											"	COUNT(ac.idAlumno) AS 'numero_alumnos' \n" +
+											"	FROM usuarios u , cursos c\n" + 
+											"	LEFT JOIN alumnosCurso ac \n" + 
+											"	ON ac.idCurso = c.id \n" + 
+											"	WHERE c.idProfesor = u.id 	 ";
+	
+	private final static String GROUP_ORDER_LIMIT = "	GROUP BY c.id \n" + 
+													"	ORDER BY c.id ASC \n" + 
+													"	LIMIT 500;\n";
 
-	private final static String SQL_LISTAR = " SELECT \n" + 
-											"	c.id 'curso_id',\n" + 
+	private final static String SQL_LISTAR = CONSULTA + GROUP_ORDER_LIMIT;
+			
+			/*
+			 * " SELECT \n" + 
+			 * "	c.id 'curso_id',\n" + 
 											"	c.identificador 'identificador', \n" + 
 											"	c.curso 'curso_nombre',\n" + 
 											"	c.horas 'horas',\n" + 
@@ -47,8 +69,12 @@ public class CursoDAOImpl implements CursoDAO {
 											"	WHERE c.idProfesor = p.id \n" +
 											"   ORDER BY c.id ASC \n" + 
 											" 	LIMIT 500 ;";
+			 */
+											
 	
-	private final static String SQL_CURSOS_PROFESOR = " SELECT \n" + 
+	private final static String SQL_CURSOS_PROFESOR = CONSULTA + "AND u.id = ? " + GROUP_ORDER_LIMIT; 
+			
+			/*" SELECT \n" + 
 													"	c.id 'curso_id',\n" + 
 													"	c.curso 'curso_nombre',\n" + 
 													"	c.identificador 'identificador',\n" + 
@@ -60,8 +86,11 @@ public class CursoDAOImpl implements CursoDAO {
 													"	FROM cursos c , usuarios u WHERE c.idProfesor = u.id AND u.id = ? \n" + 
 													"   ORDER BY c.id ASC \n" +
 													" 	LIMIT 500 ;";
+													*/
 	
-	private final static String SQL_CURSOS_ALUMNO = "	SELECT\n" + 
+	private final static String SQL_CURSOS_ALUMNO = CONSULTA + "AND ac.idAlumno = ?" + GROUP_ORDER_LIMIT;
+			
+			/*"	SELECT\n" + 
 													"	c.id 'curso_id',\n" + 
 													"	c.curso 'curso_nombre',\n" + 
 													"	c.identificador 'identificador',\n" + 
@@ -74,8 +103,12 @@ public class CursoDAOImpl implements CursoDAO {
 													"	WHERE ac.idCurso = c.id AND c.idProfesor = u.id AND ac.idAlumno = ? \n" +
 													"   ORDER BY c.id ASC \n" + 
 													" 	LIMIT 500 ;";
+													
+													*/
 	
-	private final static String SQL_CURSO_BY_ID = "	SELECT\n" + 
+	private final static String SQL_CURSO_BY_ID = CONSULTA + " AND c.id =? AND u.id = ? " + GROUP_ORDER_LIMIT;
+			
+			/*"	SELECT\n" + 
 												"	c.id 'curso_id', \n" + 
 												"	c.curso 'curso_nombre',\n" + 
 												"	c.identificador 'identificador',\n" + 
@@ -87,8 +120,11 @@ public class CursoDAOImpl implements CursoDAO {
 												"	FROM cursos c, usuarios u  WHERE c.id =? AND u.id = ? \n " +
 												"   ORDER BY c.id ASC \n" + 
 												" 	LIMIT 500 ;";
+												*/
 	
-	private final static String SQL_CURSOS_PROFESOR_NUM_ALUMNOS = "	SELECT \n" + 
+	private final static String SQL_CURSOS_PROFESOR_NUM_ALUMNOS = CONSULTA + " AND u.id = ? " + GROUP_ORDER_LIMIT; 
+			
+			/*"	SELECT \n" + 
 																"	c.id 'curso_id',\n" + 
 																"	c.curso 'curso_nombre',\n" + 
 																"	c.identificador 'identificador',\n" + 
@@ -102,6 +138,7 @@ public class CursoDAOImpl implements CursoDAO {
 																"	GROUP BY c.id \n" + 
 																"	ORDER BY c.id ASC \n" + 
 																"	LIMIT 500;";
+	*/
 	
 	private final static String SQL_INSERT_CURSO = "INSERT INTO cursos (curso, identificador, horas, idProfesor ) VALUES (?, ?, ?, ?);";
 	
@@ -251,7 +288,7 @@ public class CursoDAOImpl implements CursoDAO {
 	public Curso insert(Curso pojo) throws Exception {
 		
 		try (Connection con = ConnectionManager.getConnection();
-				PreparedStatement pst = con.prepareStatement(SQL_INSERT_CURSO);
+				PreparedStatement pst = con.prepareStatement(SQL_INSERT_CURSO, PreparedStatement.RETURN_GENERATED_KEYS);
 				) {
 			
 			pst.setString(1,pojo.getNombre());
@@ -330,6 +367,7 @@ public class CursoDAOImpl implements CursoDAO {
 		curso.setNombre(rs.getString("curso_nombre"));
 		curso.setIdentificador(rs.getString("identificador"));
 		curso.setHoras(rs.getInt("horas"));
+		curso.setNumAlumnos(rs.getInt("numero_alumnos"));
 	
 		profesor.setId(rs.getInt("usuario_id"));
 		profesor.setNombre(rs.getString("usuario_nombre"));

@@ -66,6 +66,7 @@ public class LoginController extends HttpServlet {
 				
 				if (usuario.getRol() == usuario.ROL_ALUMNO) {
 					
+					/*
 					ArrayList<Curso> cursos = daoCurso.cursosByAlumno(usuario.getId());
 					
 					ArrayList<Curso> allCursos = daoCurso.listar();
@@ -73,10 +74,13 @@ public class LoginController extends HttpServlet {
 					request.setAttribute("cursos", cursos);
 					request.setAttribute("allCursos", allCursos);
 					request.getRequestDispatcher("privado/alumno.jsp").forward(request, response);
+					*/
+					
+					response.sendRedirect(request.getContextPath() +  "/panel-alumno");
 					
 				}else {
 					
-					
+					/*
 					ArrayList<Curso> cursos = daoCurso.cursosByProfesor(usuario.getId());
 					
 					ArrayList<Curso> cursosAlumnos = daoCurso.listarCursosconAlumnos(usuario.getId());
@@ -84,6 +88,9 @@ public class LoginController extends HttpServlet {
 					request.setAttribute("cursos", cursos);
 					request.setAttribute("cursosAlumnos", cursosAlumnos);
 					request.getRequestDispatcher("privado/profesor.jsp").forward(request, response);
+					*/
+					
+					response.sendRedirect(request.getContextPath() +  "/panel-profesor");
 				}
 			
 				

@@ -1,7 +1,7 @@
  // ejecuta la funcion cuando todo el documento de html DOM este listo y cargado
       
 		$(document).ready(function() {
-		    $('#table').DataTable();
+		    $('.table').DataTable();
 		   
 		$('[data-toggle="popover"]').popover()
 		    	

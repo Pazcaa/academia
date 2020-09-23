@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
-import academia.modelo.dao.CursoDAO;
+
 import academia.modelo.dao.impl.CursoDAOImpl;
 import academia.modelo.pojo.Curso;
 

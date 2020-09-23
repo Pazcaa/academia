@@ -28,10 +28,12 @@
                         <h3>Datos Curso</h3>
                         <table>
                             <thead>
-                                <th>Curso</th>
-                                <th>Identificador</th>
-                                <th>Horas</th>
-                                <th>Profesor</th>
+	                            <tr>
+	                                <th>Curso</th>
+	                                <th>Identificador</th>
+	                                <th>Horas</th>
+	                                <th>Profesor</th>
+	                            </tr>
                             </thead>
                             <tbody>
                                 <tr>

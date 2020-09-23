@@ -33,6 +33,8 @@ public class AlumnoController extends HttpServlet {
 		HttpSession session = request.getSession();
 		Usuario usuario = (Usuario)session.getAttribute("usuario_login");
 		
+		
+		
 		try {
 			
 			ArrayList<Curso> cursos = daoCurso.cursosByAlumno(usuario.getId());
@@ -46,6 +48,8 @@ public class AlumnoController extends HttpServlet {
 			LOG.error(e);
 			
 		}finally {
+			
+			request.setAttribute("mensaje", usuario.getNombre() + " " + usuario.getApellidos() + " se ha conectado con exito");
 			
 			request.getRequestDispatcher("privado/alumno.jsp").forward(request, response);
 		}
