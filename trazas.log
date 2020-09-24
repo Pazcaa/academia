@@ -5501,3 +5501,252 @@
 	ORDER BY c.id ASC 
 	LIMIT 500;
 
+2020-09-23 22:03:24.559 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-23 22:03:29.865 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@4714e59c: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-23 22:04:38.421 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@68feaf4e: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-23 22:15:37.604 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-23 22:15:43.081 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@12e19984: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-23 22:16:11.490 DEBUG academia.modelo.dao.impl.CursoDAOImpl.getById(CursoDAOImpl.java:269) - com.mysql.jdbc.JDBC42PreparedStatement@599a3b86: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	  AND c.id =6 AND u.id = 1 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-23 22:16:18.407 DEBUG academia.modelo.dao.impl.CursoDAOImpl.getById(CursoDAOImpl.java:269) - com.mysql.jdbc.JDBC42PreparedStatement@2a826ec7: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	  AND c.id =6 AND u.id = 1 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-23 22:16:49.371 DEBUG academia.modelo.dao.impl.CursoDAOImpl.getById(CursoDAOImpl.java:269) - com.mysql.jdbc.JDBC42PreparedStatement@21b22b41: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	  AND c.id =6 AND u.id = 2 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-23 22:17:13.542 DEBUG academia.modelo.dao.impl.CursoDAOImpl.getById(CursoDAOImpl.java:269) - com.mysql.jdbc.JDBC42PreparedStatement@6241308a: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	  AND c.id =9 AND u.id = 2 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-23 22:17:44.014 DEBUG academia.modelo.dao.impl.CursoDAOImpl.getById(CursoDAOImpl.java:269) - com.mysql.jdbc.JDBC42PreparedStatement@42b43547: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	  AND c.id =1 AND u.id = 1 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-23 23:16:56.304 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-23 23:17:01.046 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@563d87d9: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-23 23:23:49.276 TRACE seguridad.SeguridadFilter.destroy(SeguridadFilter.java:39) - se destruye filtro
+2020-09-23 23:23:50.615 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-23 23:28:02.081 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-23 23:28:06.753 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@191e9a79: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-23 23:29:25.149 DEBUG academia.modelo.dao.impl.CursoDAOImpl.getById(CursoDAOImpl.java:269) - com.mysql.jdbc.JDBC42PreparedStatement@69f2bc55: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	  AND c.id =1 AND u.id = 1 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-23 23:29:56.529 DEBUG academia.modelo.dao.impl.CursoDAOImpl.getById(CursoDAOImpl.java:269) - com.mysql.jdbc.JDBC42PreparedStatement@7e030a42: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	  AND c.id =4 AND u.id = 1 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-23 23:45:04.011 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-23 23:45:08.218 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@1b6929a4: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-23 23:46:07.399 DEBUG academia.controller.api.CursoRestController.init(CursoRestController.java:36) - Se ejecuta SOLO la 1º vez que recibe una petición
+2020-09-23 23:46:07.400 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:51) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-23 23:46:07.413 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@57280cbe: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-23 23:46:07.768 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:86) - GET: cursos recuperados 5
+2020-09-23 23:46:07.769 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:61) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
