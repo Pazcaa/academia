@@ -1,4 +1,4 @@
-package academia.controller;
+package academia.controller.rest;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class EjemploRestController
  */
-@WebServlet("/ejemplo-rest")
+@WebServlet("/rest/ejemplo-rest")
 public class EjemploRestController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

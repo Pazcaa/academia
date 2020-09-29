@@ -2,9 +2,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 
 
-<jsp:include page="includes/header.jsp">
-	<jsp:param name="pagina" value="cursos" />
- 	 <jsp:param name="title" value="Cursos" /> 
+<jsp:include page="../includes/header.jsp">
+	<jsp:param name="pagina" value="rest" />
+ 	 <jsp:param name="title" value="Rest" /> 
 </jsp:include>
 
 
@@ -25,7 +25,7 @@
 		<p>Ademas de habilitar <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Access_control_CORS" target="_blank">CORS</a> si se van ahcer llamdas al servicio desde fuera del servidor.</p>
 	
 	<h2>Ejemplo Básico</h2>
-		<a href="ejemplo-rest" target="_blank">Llamada tipo GET</a>
+		<a href="rest/ejemplo-rest" target="_blank">Llamada tipo GET</a>
 		<p>Para el resto de peticiones (POST, PUT y DELETE) lo mejor es usar un cliente como POSTMAN o JS </p>
 	
 	
@@ -35,7 +35,7 @@
 		<p>Si el id existe en la bbdd retorna 200</p>
 		<p>Si el id NO existe en la bbdd retorna 204</p> 
 		
-			<form method="get" action="ejemplo-rest2">
+			<form method="get" action="rest/ejemplo-rest2">
 				<input type="text" name="id" placeholder="id del profesor" required>
 				<br>
 				<input type="text" name="idCurso" placeholder="id del curso" required>
@@ -48,4 +48,4 @@
 
 
 
-<jsp:include page="includes/footer.jsp"></jsp:include>
+<jsp:include page="../includes/footer.jsp"></jsp:include>

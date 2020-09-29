@@ -21,12 +21,15 @@ import academia.modelo.pojo.Curso;
 /**
  * Servlet implementation class CursoRestController
  */
-@WebServlet("/api/curso")
+@WebServlet("/api/profesor/*")
 public class CursoRestController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final static Logger LOG = Logger.getLogger(CursoRestController.class);  
 	private static CursoDAOImpl dao = CursoDAOImpl.getInstance();
 	private PrintWriter out = null;
+	private int idProfesor;
+	private String responseBody;
+	private int statusCode;
    
 
 	/**
@@ -54,23 +57,65 @@ public class CursoRestController extends HttpServlet {
 
 			response.setContentType("application/json");
 			response.setCharacterEncoding("UTF-8");
+			
+			/*
+			//conseguir id de la URL si es que nos viene					
+			idProfesor = 0;
+			String pathInfo = request.getPathInfo();
+			LOG.debug("url pathInfo:" + pathInfo );
+			if ( pathInfo != null ) {
+				String[] pathsParametros = pathInfo.split("/");
+				if ( pathsParametros.length > 0 ) {
+					idProfesor = Integer.parseInt(pathsParametros[1]);
+				}
+			}
 
-			out = response.getWriter();
+*/
+			
+			responseBody = "{}";
+			String pathInfo = request.getPathInfo();
+			getIdFromPath(pathInfo); //llamo al metodo
+
+			//out = response.getWriter();
 
 			super.service(request, response);  // GET, POST, PUT o DELETE
+			
 			LOG.debug("Se ejecuta DESPUES de GET, POST, PUT o DELETE");
 
-			out.flush();
+			//out.flush();
 
 		}catch (Exception e) {
 
 			e.printStackTrace();
 			LOG.error(e);
-			response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-		}	
+			statusCode = HttpServletResponse.SC_INTERNAL_SERVER_ERROR;
+			
+			
+		}	finally {
+			
+			//escribir respuesta
+			out = response.getWriter();
+			out.write(responseBody);
+			response.setStatus(statusCode);
+			out.flush();
+		}
 
 
 
+	}
+	
+	private void getIdFromPath (String pathInfo) {
+		idProfesor = 0;
+		
+		LOG.debug("url pathInfo:" + pathInfo );
+		
+		if ( pathInfo != null ) {
+			String[] pathsParametros = pathInfo.split("/");
+			if ( pathsParametros.length > 0 ) {
+				idProfesor = Integer.parseInt(pathsParametros[1]);
+			}
+		}
+		
 	}
 
 	/**
@@ -78,14 +123,46 @@ public class CursoRestController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ArrayList<Curso> cursos = dao.listar();
+		//Listado
+		if (idProfesor == 0) {
+			
+			ArrayList<Curso> cursos = dao.listar();
 
-		Gson gson = new Gson();
-		String stringBody = gson.toJson(cursos);
-		out.write( stringBody );
-		LOG.debug("GET: cursos recuperados " + cursos.size());
+			Gson gson = new Gson();
+			responseBody = gson.toJson(cursos);
+			//out.write( stringBody );
+			statusCode = HttpServletResponse.SC_OK;
+			LOG.debug("GET: cursos recuperados " + cursos.size());
 
-		response.setStatus(HttpServletResponse.SC_OK);
+			
+			
+			//DETALLE
+		}else {
+			
+			
+			
+			try {
+				
+				ArrayList<Curso> cursos = dao.cursosByProfesor(idProfesor);
+				Gson gson = new Gson();
+				responseBody = gson.toJson(cursos);
+				//out.write( stringBody );
+				LOG.debug("GET: cursos recuperados " + idProfesor);
+				
+				if (cursos.size() > 0) {
+					statusCode = HttpServletResponse.SC_OK;
+				}else {
+					statusCode = HttpServletResponse.SC_NO_CONTENT;
+				}
+				
+				
+			} catch (Exception e) {
+				
+				statusCode = HttpServletResponse.SC_NO_CONTENT;
+			}
+		}//end else
+		
+		
 	}
 
 	/**

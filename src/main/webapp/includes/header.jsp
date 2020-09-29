@@ -55,6 +55,8 @@
 	
 	  <nav class="my-2 my-md-0 mr-md-3 navbar-dark">
 	  
+	    <a class="py-2 d-none d-md-inline-block  ${ ( 'api' eq param.pagina ) ? 'active' : '' }" href="api.jsp">API</a>
+	  
 		<c:if test="${'2' eq usuario_login.rol }">
 	    <a class="py-2 d-none d-md-inline-block  ${ ( 'profesor' eq param.pagina ) ? 'active' : '' }" href="panel-profesor">${usuario_login.nombre} ${usuario_login.apellidos}</a>
 	   

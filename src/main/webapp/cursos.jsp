@@ -37,7 +37,7 @@
 		</table>
 
 
-	<a href="rest.jsp" target="_blank">Web Service REST</a>
+	<a href="webService/rest.jsp" target="_blank">Web Service REST</a>
 
 
 <jsp:include page="includes/footer.jsp"></jsp:include>

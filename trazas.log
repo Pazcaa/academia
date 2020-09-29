@@ -5750,3 +5750,868 @@
 
 2020-09-23 23:46:07.768 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:86) - GET: cursos recuperados 5
 2020-09-23 23:46:07.769 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:61) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 09:37:38.766 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-24 09:37:43.967 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@62ea1ed0: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 09:39:03.412 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@21b22b41: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 09:39:34.194 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@3b340ea5: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 09:40:31.129 DEBUG academia.modelo.dao.impl.CursoDAOImpl.getById(CursoDAOImpl.java:269) - com.mysql.jdbc.JDBC42PreparedStatement@1f356cbe: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	  AND c.id =6 AND u.id = 2 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 09:53:02.281 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-24 09:53:06.408 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@63efbeca: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 09:54:04.975 DEBUG academia.controller.api.CursoRestController.init(CursoRestController.java:36) - Se ejecuta SOLO la 1º vez que recibe una petición
+2020-09-24 09:54:04.976 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:51) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 09:54:04.987 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@5a629258: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 09:54:05.212 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:86) - GET: cursos recuperados 5
+2020-09-24 09:54:05.213 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:61) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 09:59:18.670 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@1876a55a: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 09:59:24.754 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:51) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 09:59:24.765 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@64a5d14b: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 09:59:24.767 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:86) - GET: cursos recuperados 5
+2020-09-24 09:59:24.772 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:61) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 09:59:57.594 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@3ae13f06: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 10:00:49.467 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@1db0d43e: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 10:05:06.578 DEBUG academia.controller.api.CursoRestController.destroy(CursoRestController.java:43) - Se ejecuta cuando se para la App
+2020-09-24 10:05:06.587 TRACE seguridad.SeguridadFilter.destroy(SeguridadFilter.java:39) - se destruye filtro
+2020-09-24 10:05:07.611 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-24 10:15:47.547 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-24 10:15:51.316 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@49dc386a: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 10:16:05.013 DEBUG academia.controller.api.CursoRestController.init(CursoRestController.java:37) - Se ejecuta SOLO la 1º vez que recibe una petición
+2020-09-24 10:16:05.015 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:52) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 10:16:05.016 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:62) - url pathInfo:null
+2020-09-24 10:16:05.033 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@7584c7c3: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 10:16:05.328 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:103) - GET: cursos recuperados 5
+2020-09-24 10:16:05.330 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:75) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 10:16:26.452 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:52) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 10:16:26.453 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:62) - url pathInfo:/1
+2020-09-24 10:16:26.467 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@57edc388: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 1 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 10:16:26.479 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:116) - GET: cursos recuperados 1
+2020-09-24 10:16:26.479 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:75) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 10:16:33.681 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:52) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 10:16:33.683 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:62) - url pathInfo:/2
+2020-09-24 10:16:33.684 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@8c9e86: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 2 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 10:16:33.691 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:116) - GET: cursos recuperados 3
+2020-09-24 10:16:33.692 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:75) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 10:16:46.059 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:52) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 10:16:46.060 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:62) - url pathInfo:/3
+2020-09-24 10:16:46.062 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@67b6820: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 3 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 10:16:46.065 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:116) - GET: cursos recuperados 1
+2020-09-24 10:16:46.065 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:75) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 10:16:51.943 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:52) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 10:16:51.943 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:62) - url pathInfo:/6
+2020-09-24 10:16:51.945 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@9866806: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 6 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 10:16:51.947 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:116) - GET: cursos recuperados 0
+2020-09-24 10:16:51.947 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:75) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 10:20:20.226 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:52) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 10:20:20.228 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:62) - url pathInfo:/6
+2020-09-24 10:20:29.483 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@48fbe974: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 6 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 10:20:38.454 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:116) - GET: cursos recuperados 0
+2020-09-24 10:21:10.492 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:75) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 10:24:30.489 DEBUG academia.controller.api.CursoRestController.destroy(CursoRestController.java:44) - Se ejecuta cuando se para la App
+2020-09-24 10:24:30.491 TRACE seguridad.SeguridadFilter.destroy(SeguridadFilter.java:39) - se destruye filtro
+2020-09-24 10:24:31.258 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-24 10:24:33.216 DEBUG academia.controller.api.CursoRestController.init(CursoRestController.java:37) - Se ejecuta SOLO la 1º vez que recibe una petición
+2020-09-24 10:24:33.221 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:52) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 10:24:33.248 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:62) - url pathInfo:/
+2020-09-24 10:24:33.851 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@66f322b7: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 10:24:33.928 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:103) - GET: cursos recuperados 5
+2020-09-24 10:24:33.937 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:75) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 10:24:37.947 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:52) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 10:24:37.948 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:62) - url pathInfo:/2
+2020-09-24 10:24:43.524 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@9c6e34f: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 2 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 10:24:46.794 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:118) - GET: cursos recuperados 3
+2020-09-24 10:24:53.757 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:75) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 10:24:59.482 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:52) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 10:24:59.483 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:62) - url pathInfo:/6
+2020-09-24 10:25:02.824 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@25580513: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 6 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 10:25:06.892 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:118) - GET: cursos recuperados 0
+2020-09-24 10:25:13.416 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:75) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 10:25:41.711 DEBUG academia.controller.api.CursoRestController.destroy(CursoRestController.java:44) - Se ejecuta cuando se para la App
+2020-09-24 10:25:41.725 TRACE seguridad.SeguridadFilter.destroy(SeguridadFilter.java:39) - se destruye filtro
+2020-09-24 10:25:42.930 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-24 10:28:34.587 DEBUG academia.controller.api.CursoRestController.init(CursoRestController.java:37) - Se ejecuta SOLO la 1º vez que recibe una petición
+2020-09-24 10:28:34.589 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:52) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 10:28:34.593 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:62) - url pathInfo:/1
+2020-09-24 10:28:41.366 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@51eca55f: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 1 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 10:28:41.535 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:118) - GET: cursos recuperados 1
+2020-09-24 10:28:41.536 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:75) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 11:53:18.755 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:52) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 11:53:18.757 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:62) - url pathInfo:/1
+2020-09-24 11:53:18.776 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@6daf8e96: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 1 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 11:53:18.842 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:118) - GET: cursos recuperados 1
+2020-09-24 11:53:18.842 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:75) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 11:53:24.501 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:52) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 11:53:24.502 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:62) - url pathInfo:/0
+2020-09-24 11:53:24.512 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@5d2caf06: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 11:53:24.520 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:103) - GET: cursos recuperados 5
+2020-09-24 11:53:24.520 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:75) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 11:54:02.374 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:52) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 11:54:02.375 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:62) - url pathInfo:/1
+2020-09-24 11:54:02.379 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@48e2fc8b: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 1 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 11:54:02.389 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:118) - GET: cursos recuperados 1
+2020-09-24 11:54:02.391 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:75) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 11:54:07.630 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:52) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 11:54:07.631 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:62) - url pathInfo:/2
+2020-09-24 11:54:07.633 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@1ed41bd9: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 2 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 11:54:07.637 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:118) - GET: cursos recuperados 3
+2020-09-24 11:54:07.637 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:75) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 11:54:13.038 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:52) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 11:54:13.039 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:62) - url pathInfo:/3
+2020-09-24 11:54:13.045 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@1c6a817: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 3 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 11:54:13.050 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:118) - GET: cursos recuperados 1
+2020-09-24 11:54:13.050 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:75) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 11:54:35.078 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:52) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 11:54:35.080 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:62) - url pathInfo:/4
+2020-09-24 11:54:35.082 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@79015f62: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 4 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 11:54:35.087 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:118) - GET: cursos recuperados 0
+2020-09-24 11:54:35.092 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:75) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 11:54:40.655 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:52) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 11:54:40.656 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:62) - url pathInfo:/3
+2020-09-24 11:54:40.657 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@64eec348: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 3 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 11:54:40.660 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:118) - GET: cursos recuperados 1
+2020-09-24 11:54:40.660 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:75) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 11:54:44.551 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:52) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 11:54:44.552 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:62) - url pathInfo:/2
+2020-09-24 11:54:44.554 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@1c11a53d: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 2 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 11:54:44.561 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:118) - GET: cursos recuperados 3
+2020-09-24 11:54:44.562 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:75) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 11:56:22.793 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-24 11:56:27.344 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@32f1ebfa: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 11:56:48.906 DEBUG academia.controller.api.CursoRestController.init(CursoRestController.java:38) - Se ejecuta SOLO la 1º vez que recibe una petición
+2020-09-24 11:56:48.912 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:53) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 11:56:48.913 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:63) - url pathInfo:null
+2020-09-24 11:56:48.940 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@9fef342: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 11:56:49.102 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:104) - GET: cursos recuperados 5
+2020-09-24 11:56:49.103 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:76) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 11:57:07.476 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:53) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 11:57:07.478 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:63) - url pathInfo:/0
+2020-09-24 11:57:07.484 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@7b273917: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 11:57:07.493 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:104) - GET: cursos recuperados 5
+2020-09-24 11:57:07.499 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:76) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 11:57:10.744 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:53) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 11:57:10.747 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:63) - url pathInfo:/1
+2020-09-24 11:57:10.749 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@5b6a1ae8: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 1 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 11:57:10.781 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:119) - GET: cursos recuperados 1
+2020-09-24 11:57:10.788 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:76) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 11:57:14.069 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:53) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 11:57:14.070 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:63) - url pathInfo:/2
+2020-09-24 11:57:14.071 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@6233b6: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 2 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 11:57:14.088 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:119) - GET: cursos recuperados 3
+2020-09-24 11:57:14.089 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:76) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 11:57:17.193 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:53) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 11:57:17.194 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:63) - url pathInfo:/3
+2020-09-24 11:57:17.195 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@1abfbfdc: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 3 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 11:57:17.198 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:119) - GET: cursos recuperados 1
+2020-09-24 11:57:17.199 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:76) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 11:57:19.722 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:53) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 11:57:19.724 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:63) - url pathInfo:/4
+2020-09-24 11:57:19.728 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@5a6ff595: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 4 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 11:57:19.730 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:119) - GET: cursos recuperados 0
+2020-09-24 11:57:19.734 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:76) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 11:57:22.415 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:53) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 11:57:22.417 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:63) - url pathInfo:/2
+2020-09-24 11:57:22.418 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@641f9f0: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 2 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 11:57:22.421 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:119) - GET: cursos recuperados 3
+2020-09-24 11:57:22.422 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:76) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 12:05:35.649 DEBUG academia.controller.api.CursoRestController.destroy(CursoRestController.java:45) - Se ejecuta cuando se para la App
+2020-09-24 12:05:35.651 TRACE seguridad.SeguridadFilter.destroy(SeguridadFilter.java:39) - se destruye filtro
+2020-09-24 12:05:36.806 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-24 12:28:07.132 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-24 12:28:11.205 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@1c1e8949: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 12:28:23.603 DEBUG academia.controller.api.CursoRestController.init(CursoRestController.java:39) - Se ejecuta SOLO la 1º vez que recibe una petición
+2020-09-24 12:28:23.603 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:54) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 12:28:23.604 DEBUG academia.controller.api.CursoRestController.getIdFromPath(CursoRestController.java:110) - url pathInfo:/2
+2020-09-24 12:28:23.608 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@21b22b41: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 2 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 12:28:23.839 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:150) - GET: cursos recuperados 2
+2020-09-24 12:28:23.840 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:83) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 12:28:32.360 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:54) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 12:28:32.363 DEBUG academia.controller.api.CursoRestController.getIdFromPath(CursoRestController.java:110) - url pathInfo:/1
+2020-09-24 12:28:32.371 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@6a19c191: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 1 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 12:28:32.387 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:150) - GET: cursos recuperados 1
+2020-09-24 12:28:32.387 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:83) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 12:28:36.734 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:54) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 12:28:36.736 DEBUG academia.controller.api.CursoRestController.getIdFromPath(CursoRestController.java:110) - url pathInfo:/9
+2020-09-24 12:28:36.740 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@2ed3a268: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 9 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 12:28:36.760 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:150) - GET: cursos recuperados 9
+2020-09-24 12:28:36.761 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:83) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-24 12:28:40.668 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:54) - Se ejecuta ANTES de GET, POST, PUT o DELETE
+2020-09-24 12:28:40.672 DEBUG academia.controller.api.CursoRestController.getIdFromPath(CursoRestController.java:110) - url pathInfo:/0
+2020-09-24 12:28:40.677 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@4b2680c: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-09-24 12:28:40.681 DEBUG academia.controller.api.CursoRestController.doGet(CursoRestController.java:135) - GET: cursos recuperados 5
+2020-09-24 12:28:40.682 DEBUG academia.controller.api.CursoRestController.service(CursoRestController.java:83) - Se ejecuta DESPUES de GET, POST, PUT o DELETE
+2020-09-25 10:49:12.706 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-28 08:22:20.662 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-28 09:45:53.391 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-29 09:07:58.692 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-29 09:11:52.492 TRACE seguridad.SeguridadFilter.destroy(SeguridadFilter.java:39) - se destruye filtro
+2020-09-29 09:11:54.668 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro

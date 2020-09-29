@@ -1,4 +1,4 @@
-package academia.controller;
+package academia.controller.rest;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,7 +17,7 @@ import academia.modelo.pojo.Curso;
 /**
  * Servlet implementation class EjemploRest2Controller
  */
-@WebServlet("/ejemplo-rest2")
+@WebServlet("/rest/ejemplo-rest2")
 public class EjemploRestController2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
