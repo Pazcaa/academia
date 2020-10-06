@@ -6615,3 +6615,198 @@
 2020-09-29 09:07:58.692 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
 2020-09-29 09:11:52.492 TRACE seguridad.SeguridadFilter.destroy(SeguridadFilter.java:39) - se destruye filtro
 2020-09-29 09:11:54.668 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-29 10:24:21.530 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-29 10:31:46.478 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-29 12:04:49.809 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-29 12:10:00.853 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-29 12:17:27.389 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-29 12:28:37.713 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-30 09:08:41.551 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-30 10:28:57.469 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-30 10:33:44.477 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-30 11:56:21.937 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-09-30 12:48:11.713 TRACE seguridad.SeguridadFilter.destroy(SeguridadFilter.java:39) - se destruye filtro
+2020-10-01 09:44:30.327 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-01 10:28:04.855 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-01 10:42:05.947 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-01 10:43:49.166 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-01 10:51:38.825 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-02 08:28:56.535 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-02 09:15:45.634 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-02 10:46:21.956 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-02 11:39:34.219 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-02 11:51:17.654 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-02 12:10:45.742 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-02 12:56:03.837 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-02 12:59:47.606 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-02 13:12:30.771 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-02 13:17:46.293 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-02 13:22:04.887 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-02 13:53:18.425 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-03 22:28:24.782 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-04 00:38:05.269 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-04 12:07:32.405 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-04 12:36:31.184 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-04 13:10:17.731 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-04 13:46:49.130 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-04 13:58:12.836 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-04 14:21:55.878 TRACE seguridad.SeguridadFilter.destroy(SeguridadFilter.java:39) - se destruye filtro
+2020-10-04 14:21:56.235 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-04 14:26:01.427 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-04 14:43:49.326 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-04 15:21:09.039 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-04 15:31:06.893 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-04 15:34:31.167 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-04 15:46:43.614 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-04 15:51:31.829 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-04 15:55:20.830 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-04 15:59:32.716 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-04 16:21:38.586 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-04 16:33:22.225 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-04 22:04:03.002 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-04 22:30:21.008 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@347b5ce7: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-10-04 22:31:00.230 DEBUG academia.modelo.dao.impl.UsuarioDAOImpl.existe(UsuarioDAOImpl.java:53) - com.mysql.jdbc.JDBC42PreparedStatement@567fd10e:  SELECT u.id , u.nombre, u.apellidos, u.rol, u.password
+ 	FROM usuarios u  	WHERE nombre = 'Ander' AND apellidos = 'Uraga' AND password = MD5('123456') 
+   ORDER BY u.id ASC 
+ 	LIMIT 500 ;
+2020-10-04 22:31:00.264 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByProfesor(CursoDAOImpl.java:186) - com.mysql.jdbc.JDBC42PreparedStatement@404b0973: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND u.id = 2 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-10-04 22:31:00.272 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listarCursosconAlumnos(CursoDAOImpl.java:241) - com.mysql.jdbc.JDBC42PreparedStatement@207e8574: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	  AND u.id = 2 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-10-04 22:31:00.276 TRACE seguridad.SeguridadFilter.doFilter(SeguridadFilter.java:54) - filtrando URI:/academia/privado/profesor.jsp
+2020-10-04 22:31:22.985 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@27128fb0: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-10-04 22:31:39.461 DEBUG academia.modelo.dao.impl.UsuarioDAOImpl.existe(UsuarioDAOImpl.java:53) - com.mysql.jdbc.JDBC42PreparedStatement@1d829188:  SELECT u.id , u.nombre, u.apellidos, u.rol, u.password
+ 	FROM usuarios u  	WHERE nombre = 'Elier' AND apellidos = 'Otero' AND password = MD5('123456') 
+   ORDER BY u.id ASC 
+ 	LIMIT 500 ;
+2020-10-04 22:31:39.504 DEBUG academia.modelo.dao.impl.CursoDAOImpl.cursosByAlumno(CursoDAOImpl.java:214) - com.mysql.jdbc.JDBC42PreparedStatement@7e06b010: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 AND ac.idAlumno = 4	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-10-04 22:31:39.520 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@16a2c8e0: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-10-04 22:31:39.522 TRACE seguridad.SeguridadFilter.doFilter(SeguridadFilter.java:54) - filtrando URI:/academia/privado/alumno.jsp
+2020-10-04 22:32:34.316 DEBUG academia.modelo.dao.impl.CursoDAOImpl.listar(CursoDAOImpl.java:159) - com.mysql.jdbc.JDBC42PreparedStatement@422e3028: 	SELECT 
+	c.id 'curso_id', 
+	c.curso 'curso_nombre',	
+	c.identificador 'identificador', 
+	c.horas 'horas', 
+	u.id 'usuario_id', 
+	u.nombre 'usuario_nombre', 
+	u.apellidos 'usuario_apellidos', 
+	rol, 
+	COUNT(ac.idAlumno) AS 'numero_alumnos' 
+	FROM usuarios u , cursos c
+	LEFT JOIN alumnosCurso ac 
+	ON ac.idCurso = c.id 
+	WHERE c.idProfesor = u.id 	 	GROUP BY c.id 
+	ORDER BY c.id ASC 
+	LIMIT 500;
+
+2020-10-04 22:38:55.399 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-05 09:55:00.622 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-05 10:01:35.128 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-05 10:27:14.166 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-05 10:32:38.404 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-05 10:34:18.015 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-05 10:41:23.719 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-05 10:46:36.462 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-05 11:11:01.637 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-05 12:36:08.525 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-05 13:16:31.031 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-05 13:23:51.560 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-06 09:09:46.561 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-06 09:11:58.297 TRACE seguridad.SeguridadFilter.destroy(SeguridadFilter.java:39) - se destruye filtro
+2020-10-06 09:12:05.643 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-06 09:17:36.521 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
+2020-10-06 09:40:32.895 TRACE seguridad.SeguridadFilter.init(SeguridadFilter.java:73) - se inicializa filtro
